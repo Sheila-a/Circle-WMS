@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Button from '../Button/Button'
-import styles from './login.module.css'
+import Button from '../Button/Button';
+import styles from './login.module.css';
 
-import recycleHand from '../../assets/LoginImg.png'
-import google from '../../assets/Social icon.png'
-import linekdln from '../../assets/Vector.png'
+import recycleHand from '../../assets/LoginImg.png';
+import google from '../../assets/Social icon.png';
+import linekdln from '../../assets/Vector.png';
 
 function Login({Clickhandler}) {
   return (
@@ -38,9 +38,9 @@ function Login({Clickhandler}) {
         </form>
 
         <Button
-        handleclick={Clickhandler}
-        style={{background: '#7F56D9', width: "99%"}}
-        text='Login'/>
+          handleclick={Clickhandler}
+          style={{background: '#7F56D9', width: "99%"}}
+          text='Login'/>
       
         <p className={styles['texty']}>Dont have an account? <Link to='/signup'><span>Sign up</span></Link></p>
         <div className={styles['liney-texty']}>
@@ -56,7 +56,7 @@ function Login({Clickhandler}) {
         <Button
           img={google}
           style={{color: '#344054'}}
-          text='Sign in with Goggle'/>
+          text='Sign in with Google'/>
         <Button
           img={linekdln}  
           style={{ background: "#1877F2"}} 
