@@ -7,8 +7,8 @@ const Hero = () => {
     <div className={design.hero_container}>
       <div
         className={design.hero_left}
-        // data-aos="fade-up"
-        // data-aos-duration="1000"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <h1>
           Turn Your Plastic Wastes to
