@@ -53,9 +53,6 @@ a:hover {
 .menuItems {
   display: flex;
 }
-.navLogo {
-  /* width: 6%; */
-}
 
 .menuItems li {
   list-style-type: none;

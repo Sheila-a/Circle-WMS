@@ -64,7 +64,7 @@ const Navbar = () => {
             <Link to="signup"> Register</Link>
 
             <Link
-              to="/login-in"
+              to="/login"
               style={{ textDecoration: "none" }}
               onMouseOver="this.style.color='blue'"
             >
