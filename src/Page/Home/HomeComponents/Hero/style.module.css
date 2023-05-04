@@ -63,6 +63,11 @@
   .hero_left {
     width: 100%;
     text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .hero_left h1 {
+    font-size: 6vw;
   }
 
   .hero_img {
