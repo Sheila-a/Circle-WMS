@@ -10,18 +10,18 @@ const WhatWeDo = () => {
       <p style={{ marginBottom: "100px", lineHeight: "35px" }}>
         At BIRC, we are passionate about creating a cleaner and greener world
         for everyone. We believe that every little effort can make a big impact,
-        and that's why we've made it our mission to incentivize people to
-        recycle their belongings in a fun and rewarding way. We&apos;re a waste
-        management company that promotes sustainability by providing efficient
-        waste disposal solutions for individuals and businesses. Our innovative
-        rewards program incentivize users when they dispose of their plastic
-        waste with us by offering USDC as a reward. Here's how it works: when
-        you bring your old or unwanted items to us, we'll sort and recycle them
-        responsibly. But we won't just stop there. We'll also reward you for
-        your efforts! Every time you recycle with us, you'll earn points that
-        can be redeemed for cool rewards and discounts. Plus, you'll get the
-        satisfaction of knowing that you're doing your part to reduce waste and
-        help the environment.
+        and that&apos;s why we&apos;ve made it our mission to incentivize people
+        to recycle their belongings in a fun and rewarding way. We&apos;re a
+        waste management company that promotes sustainability by providing
+        efficient waste disposal solutions for individuals and businesses. Our
+        innovative rewards program incentivize users when they dispose of their
+        plastic waste with us by offering USDC as a reward. Here&apos;s how it
+        works: when you bring your old or unwanted items to us, we&apos;ll sort
+        and recycle them responsibly. But we won&apos;t just stop there.
+        We&apos;ll also reward you for your efforts! Every time you recycle with
+        us, you&apos;ll earn points that can be redeemed for cool rewards and
+        discounts. Plus, you&apos;ll get the satisfaction of knowing that
+        you&apos;re doing your part to reduce waste and help the environment.
       </p>
       <div className={design.WhatWeDo_cards}>
         <div className={design.WhatWeDo_card_item}>
