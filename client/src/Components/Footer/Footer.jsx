@@ -69,6 +69,7 @@ const Footer = () => {
                 backgroundColor: "#8BC34A",
                 marginLeft: "0",
                 border: "none",
+                marginBottom: "20px",
               }}
             />
           </form>
