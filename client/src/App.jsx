@@ -5,6 +5,7 @@ import Signup from "./userAuthenticate/Signup/Signup";
 import Button from "./userAuthenticate/Button/Button";
 import Home from "./Page/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -19,7 +20,6 @@ function App() {
           Working
         </h1> */}
         {/* <Route path="/login" element={<Home />} /> */}
-        <Routes></Routes>
 
         <Button
           style={{ background: "#1877F2", width: "180px", marginTop: "45px" }}
@@ -40,6 +40,7 @@ function App() {
           />
           <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
         </Routes>
+        <Footer />
       </>
     );
   }

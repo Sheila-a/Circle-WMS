@@ -10,12 +10,22 @@ import Work7 from "../../../../assets/work7.png";
 const HowItWorks = () => {
   return (
     <div className={design.HowItWorks_container}>
-      <h1>How It Works</h1>
-      <p style={{ marginBottom: "100px" }}>
+      <h1 data-aos="fade-up" data-aos-duration="1000">
+        How It Works
+      </h1>
+      <p
+        style={{ marginBottom: "100px" }}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         We manage and recycle your waste in these simple steps.
       </p>
       <div className={design.HowItWorks_cards}>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-out"
+          data-aos-duration="1000"
+        >
           <img src={Work1} alt="" />
           <h3>Register</h3>
           <p>
@@ -23,7 +33,11 @@ const HowItWorks = () => {
             rewards program.
           </p>
         </div>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+        >
           <img src={Work2} alt="" />
           <h3>Dispose</h3>
           <p>
@@ -31,7 +45,11 @@ const HowItWorks = () => {
             on-site bins to get your USDC.
           </p>
         </div>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-out"
+          data-aos-duration="1000"
+        >
           <img src={Work3} alt="" />
           <h3>AI-Based Recognition</h3>
           <p>
@@ -39,7 +57,11 @@ const HowItWorks = () => {
             wastes thrown into the bin.
           </p>
         </div>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <img src={Work4} alt="" />
           <h3>Automatic Sorting</h3>
           <p>
@@ -47,7 +69,11 @@ const HowItWorks = () => {
             their appropriate sections.
           </p>
         </div>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-out"
+          data-aos-duration="1500"
+        >
           <img src={Work5} alt="" />
           <h3>Weighing Waste</h3>
           <p>
@@ -55,7 +81,11 @@ const HowItWorks = () => {
             used to determine the reward to be given to the user.
           </p>
         </div>
-        <div className={design.HowItWorks_card_item}>
+        <div
+          className={design.HowItWorks_card_item}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <img src={Work6} alt="" />
           <h3>User Reward</h3>
           <p>
@@ -63,7 +93,11 @@ const HowItWorks = () => {
             disposed.
           </p>
         </div>
-        <div className={`${design.HowItWorks_card_item} ${design.stranger}`}>
+        <div
+          className={`${design.HowItWorks_card_item} ${design.stranger}`}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <img src={Work7} alt="" />
           <h3>Recycle</h3>
           <p>
