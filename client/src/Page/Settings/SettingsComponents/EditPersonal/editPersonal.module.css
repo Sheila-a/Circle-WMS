@@ -1,0 +1,42 @@
+.form-container{
+  width: 750px;
+  height: 434px;
+  padding: 20px;
+  align-items: center;
+  border: 1px solid #D0D5DD;
+  background: White;
+  border-radius: 8px;
+}
+
+.form-container h1{
+  font-weight: 400;
+  font-size: 24px;
+  color: #667085;
+}
+
+.personal-form section{
+  display: grid;
+  grid-template-columns: 320px 320px;
+  row-gap: 10px;
+  column-gap: 40px;
+  margin-bottom: 20px;
+}
+
+
+.personal-form label{
+  font-weight: 600;
+  font-size: 14px;
+  color: #344054;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.personal-form input{
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  display: block;
+  font-size: 16px;
+  color: #667085;
+}

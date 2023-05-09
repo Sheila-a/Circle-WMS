@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;  
+}
+
+.snavlike{
+  padding: 10px 10vw;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  width: 100%;
+  z-index: 999px;
+  position: fixed;
+}
+
+.snavlike h1{
+  font-size: 22px;
+  color: #1D2939;
+  font-weight: 600;
+}
+
+.snavlike section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.snavlike section figure{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.snavlike section figure img{
+  width: 100%;
+  height: 100%; 
+}
+
+.snavlike section article .name{
+  color: #667085;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 1px;
+}
+
+.snavlike section article .email{
+  color: #98A2B3;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+
