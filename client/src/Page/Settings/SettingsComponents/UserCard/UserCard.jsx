@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import styles from './userCard.module.css'
 import img from '../../../../assets/Ellipse 7.png'
+import camera from '../../../../assets/icon.png'
 import Button from '../Button/Button'
 
 
@@ -10,9 +11,12 @@ function UserCard({name, email}) {
   return (
     <div className={styles['user-card']}>
       <section className={styles['section-1']} >
-        <figure>
-          <img src={img} alt="" />
-        </figure>
+        <div> 
+            <figure>
+              <img src={img} alt="" />
+            </figure>
+            <button className={styles['icon-container']}><img src={camera} alt="" /></button>
+        </div>
 
         <article>
           <p className={styles['name']}>{name}</p>
@@ -33,7 +37,7 @@ function UserCard({name, email}) {
         <Button
             text='Password'
             customStyle = {{
-              'paddingRight': '64%',
+              'paddingRight': '60%',
               'background' : 'white',
               'color': '#667085',
               'border' : '2px solid white'

@@ -6,7 +6,7 @@ import Button from "./userAuthenticate/Button/Button";
 import Home from "./Page/Home/Home";
 
 
-import Settings from "./Page/Settings/Settings";
+import Settings from "./Page/Settings/SettingsPage/Settings";
 import EditPersonal from "./Page/Settings/SettingsComponents/EditPersonal/EditPersonal";
 import EditPassword from "./Page/Settings/SettingsComponents/EditPassword/EditPassword";
 

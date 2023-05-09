@@ -57,4 +57,40 @@
   font-size: 14px;
 }
 
+@media screen and (max-width: 768px){
+  .snavlike{
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 10vw;
+    padding-top: 110px;
+    z-index: 2000;
+  }
+
+  .snavlike h1{
+    font-size: 22px;
+    
+  }
+
+  .snavlike section{ 
+    margin-bottom: 20px; 
+  }
+
+  .snavlike section figure{
+    width: 46px;
+    height: 46px;
+  }
+
+  .snavlike section article .name{
+    font-size: 15px;
+  }
+
+  .snavlike section article .email{
+    font-size: 13px;
+  }
+
+
+
+}
 

@@ -19,6 +19,7 @@
 .sheader section{
   font-weight: 400;
 }
+
 .sheader section h1{
   font-size: 28px;
   color: #344054;
@@ -44,3 +45,17 @@
   background: transparent;
 }
 
+@media screen and (max-width: 768px){
+  
+  .sheader .header-img-container{
+    display: none;
+  }
+
+  .sheader section h1{
+    font-size: 22px;
+  }
+
+  .sheader section p{
+    font-size: 13px;
+  }
+}
