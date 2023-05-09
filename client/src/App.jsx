@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Login from "./userAuthenticate/Login/Login";
 import Signup from "./userAuthenticate/Signup/Signup";
 import Button from "./userAuthenticate/Button/Button";
 import Home from "./Page/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Dashboard from "./Page/Dashboard/Dashboard";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -31,7 +33,7 @@ function App() {
   } else {
     return (
       <>
-        <Navbar />
+        {location.pathname !== "/dashboard" && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -39,6 +41,7 @@ function App() {
             element={<Signup Clickhandler={handleLogin} />}
           />
           <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </>
