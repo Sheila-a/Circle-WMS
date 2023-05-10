@@ -12,7 +12,7 @@
   padding: 20px;
   border: 1px solid #D0D5DD;
   background: White;
-  margin-right: 100px;
+  margin-right: 20px;
 }
 
 .user-card .section-1{
@@ -84,6 +84,23 @@
   justify-content: space-between;
 }
 
+.user-card .section-2 .link_style{
+  text-decoration: none;
+  background: white;
+  color: #667085;
+  padding: 5px 15px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: all 0.4s linear;
+}
+
+.user-card .section-2 .link_style:hover{
+  background: #8bc34a;
+  color: #fff;
+}
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -92,7 +109,7 @@
     margin-bottom: 40px;
   }
 
-  .user-card .section-2 button{
+  .user-card .section-2 .link_style{
       width: 100%;
   }
 }

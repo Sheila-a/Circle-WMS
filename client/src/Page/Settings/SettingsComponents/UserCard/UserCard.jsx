@@ -1,13 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
-import styles from './userCard.module.css'
-import img from '../../../../assets/Ellipse 7.png'
-import camera from '../../../../assets/icon.png'
-import Button from '../Button/Button'
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import styles from './userCard.module.css';
+import img from '../../../../assets/Ellipse 7.png';
+import camera from '../../../../assets/icon.png';
 
 
 
 function UserCard({name, email}) {
+  const [activeItem, setActiveItem] = useState('dashboard/settings');
+  const location = useLocation();
+
+
+  //Update activeItem based on currentlocation
+  useEffect(() => {
+    if(location.pathname === '/dashboard/settings/personal'){
+      setActiveItem('profile');
+    }else if(location.pathname === '/dashboard/settings/password'){
+      setActiveItem('password');
+    }
+  }, [location])
+
+
+  const activeBackgroundColor = "#8bc34a";
+
+
+  const activeLinkStyle = {
+    backgroundColor: activeBackgroundColor,
+    textDecoration: "none",
+    color: "#fff",
+  };
+
   return (
     <div className={styles['user-card']}>
       <section className={styles['section-1']} >
@@ -15,9 +37,7 @@ function UserCard({name, email}) {
             <figure>
               <img src={img} alt="" />
             </figure>
-            <button type='file' className={styles['icon-container']}> <img src={camera} alt="" /></button>
-            
-            
+            <button type='file' className={styles['icon-container']}> <img src={camera} alt="" /></button>            
         </div>
 
         <article>
@@ -29,24 +49,24 @@ function UserCard({name, email}) {
       <p className={styles['demarcation']}></p>
 
       <section className={styles['section-2']}>
-      <Button
-              text='Profile'
-              customStyle = {{
-                'paddingRight': '67%',
-                'marginBottom' : '10px'
-              }}/>
-        
-        <Button
-            text='Password'
-            customStyle = {{
-              'paddingRight': '60%',
-              'background' : 'white',
-              'color': '#667085',
-              'border' : '2px solid white'
-            }}
-            />
-      </section>
+        <Link
+            className={styles['link_style']}
+            to='personal'
+            style={activeItem === "profile" ? activeLinkStyle : {}}
+        >
+          Profile
+        </Link>
+
       
+        <Link
+          className={styles['link_style']}
+          to='password'
+          style={activeItem === "password" ? activeLinkStyle : {}}
+        >
+            Password
+        </Link>
+
+      </section>
     </div>
   )
 }

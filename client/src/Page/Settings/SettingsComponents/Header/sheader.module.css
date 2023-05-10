@@ -8,7 +8,7 @@
 .sheader{
   height: 200px;
   width: 100%;
-  padding: 189px 10vw 100px 10vw;
+  padding: 189px 3vw 100px 3vw;
   background: #EEF6E4;
   display: flex;
   flex-direction: row;
@@ -46,6 +46,11 @@
 }
 
 @media screen and (max-width: 768px){
+  .sheader{
+    width: 378px;
+    padding-top: 220px;
+    padding-left: 10vw
+  }
   
   .sheader .header-img-container{
     display: none;

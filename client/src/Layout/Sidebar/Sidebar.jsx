@@ -1,6 +1,6 @@
 import design from "./style.module.css";
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded";
@@ -10,8 +10,18 @@ import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import SLOGO from "../../assets/logo.png";
 
 const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState("dashboard");
+  const [activeItem, setActiveItem] = useState("");
   const location = useLocation();
+
+
+
+  //Logout Functionality
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    
+    navigate('/login')
+  }
+
 
   // update activeItem based on current location
   useEffect(() => {
@@ -21,10 +31,11 @@ const Sidebar = () => {
       setActiveItem("wallet");
     } else if (location.pathname === "/leaderboard") {
       setActiveItem("leaderboard");
-    } else if (location.pathname === "/settings") {
+    } else if (location.pathname === "/dashboard/settings") {
       setActiveItem("settings");
     }
   }, [location]);
+  
   // define active and inactive colors
   const activeBackgroundColor = "#8bc34a";
 
@@ -85,7 +96,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="/settings"
+            to="settings"
             style={activeItem === "settings" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
@@ -96,7 +107,7 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-      <div className={design.Sidebar_logout}>
+      <div className={design.Sidebar_logout} onClick={handleLogout}>
       <ArrowBackIosNewRoundedIcon />  Log out 
       </div>
     </div>

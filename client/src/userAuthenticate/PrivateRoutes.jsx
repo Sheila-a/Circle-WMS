@@ -1,10 +1,19 @@
 import React from 'react'
 import { Outlet, Navigate } from 'react-router-dom'
+import Dashboard from '../Page/Dashboard/Dashboard'
 
 function PrivateRoutes() {
   let auth = {'token': true}
   return (
-    auth.token ? <Outlet/> : <Navigate to='/' />
+    auth.token ?
+    <>
+    <Dashboard/>
+    
+    </> 
+     : 
+    
+    
+    <Navigate to='/' />
 
   )
 }

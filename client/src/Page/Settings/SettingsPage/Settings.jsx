@@ -21,7 +21,7 @@ function Settings() {
         <Outlet/>
       </main>
 
-      <SuccessModal/>
+      {/*<SuccessModal/>*/}
       {/*<UploadModal/>*/}
     </div>
   )

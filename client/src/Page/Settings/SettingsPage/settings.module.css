@@ -1,9 +1,10 @@
 .settings-pg{
   position: relative;
+  width: 100%;
 }
 
 .mainStyles{
-  padding: 20px 10vw;
+  padding: 20px 3vw;
   background: #FCFCFD;
   display: flex;
   flex-direction: row;

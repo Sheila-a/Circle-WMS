@@ -3,10 +3,6 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-
 import Login from "./userAuthenticate/Login/Login";
 import Signup from "./userAuthenticate/Signup/Signup";
 import Home from "./Page/Home/Home";
-import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
-import Dashboard from "./Page/Dashboard/Dashboard";
-
 
 import Settings from "./Page/Settings/SettingsPage/Settings";
 import EditPersonal from "./Page/Settings/SettingsComponents/EditPersonal/EditPersonal";
@@ -19,8 +15,7 @@ import PublicRoute from "./userAuthenticate/PublicRoute";
 function App() {
 
   const navigate = useNavigate()
-  const location = useLocation();
-  
+
   const handleLogin = () => {
     navigate('/dashboard')
   };
@@ -29,10 +24,7 @@ function App() {
     return (
       <>
         <Routes>
-          <Route path="/dashboard" element={<PrivateRoutes/>}>
-            <Route path="/" element={<Dashboard/>} />
-            <Route path="/footer" element={<Footer/>} />
-            
+          <Route path="dashboard" element={<PrivateRoutes/>}>
             <Route path="settings" element={<Settings/>}>
                 <Route path="personal" element={<EditPersonal/>}/>
                 <Route path="password" element={<EditPassword/>}/>
