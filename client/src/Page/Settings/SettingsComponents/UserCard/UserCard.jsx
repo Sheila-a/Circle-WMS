@@ -15,7 +15,9 @@ function UserCard({name, email}) {
             <figure>
               <img src={img} alt="" />
             </figure>
-            <button className={styles['icon-container']}><img src={camera} alt="" /></button>
+            <button type='file' className={styles['icon-container']}> <img src={camera} alt="" /></button>
+            
+            
         </div>
 
         <article>
