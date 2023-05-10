@@ -14,6 +14,8 @@ const Navbar = () => {
       setActiveItem("how-it-works");
     } else if (location.pathname === "/contact-us") {
       setActiveItem("contact-us");
+    } else if (location.pathname === "/about") {
+      setActiveItem("about");
     }
   }, [location]);
   // define active and inactive colors
@@ -43,6 +45,14 @@ const Navbar = () => {
             <span className={`${styles.line} ${styles.line3}`}></span>
           </div>
           <ul className={styles.menuItems}>
+            <li>
+              <Link
+                to="/about"
+                style={activeItem === "about" ? activeLinkStyle : {}}
+              >
+                About
+              </Link>
+            </li>
             <li>
               <Link
                 to="/how-it-works"

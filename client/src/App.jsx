@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import Login from "./userAuthenticate/Login/Login";
 import Signup from "./userAuthenticate/Signup/Signup";
-import Button from "./userAuthenticate/Button/Button";
 import Home from "./Page/Home/Home";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import Dashboard from "./Page/Dashboard/Dashboard";
 
 
 import Settings from "./Page/Settings/SettingsPage/Settings";
@@ -17,6 +19,7 @@ import PublicRoute from "./userAuthenticate/PublicRoute";
 function App() {
 
   const navigate = useNavigate()
+  const location = useLocation();
   
   const handleLogin = () => {
     navigate('/dashboard')
@@ -27,6 +30,9 @@ function App() {
       <>
         <Routes>
           <Route path="/dashboard" element={<PrivateRoutes/>}>
+            <Route path="/" element={<Dashboard/>} />
+            <Route path="/footer" element={<Footer/>} />
+            
             <Route path="settings" element={<Settings/>}>
                 <Route path="personal" element={<EditPersonal/>}/>
                 <Route path="password" element={<EditPassword/>}/>
@@ -39,14 +45,9 @@ function App() {
                 <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
           </Route>
         </Routes>
-        
-        {/*<Button
-          style={{ background: "#1877F2", width: "180px", marginTop: "45px" }}
-          text="Sign out"
-          handleclick={() => setIsLoggedIn(false)}
-      />*/}
       </>
     );
 }
+
 
 export default App;
