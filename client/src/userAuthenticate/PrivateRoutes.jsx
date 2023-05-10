@@ -1,6 +1,6 @@
-import React from 'react'
-import { Outlet, Navigate } from 'react-router-dom'
-import Dashboard from '../Page/Dashboard/Dashboard'
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import Dashboard from '../Page/Dashboard/Dashboard';
 
 function PrivateRoutes() {
   let auth = {'token': true}

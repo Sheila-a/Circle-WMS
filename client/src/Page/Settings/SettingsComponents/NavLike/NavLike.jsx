@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './navlike.module.css'
-import img from '../../../../assets/Ellipse 7.png'
+import React from 'react';
+import styles from './navlike.module.css';
+import img from '../../../../assets/Ellipse 7.png';
 
 function NavLike() {
   return (

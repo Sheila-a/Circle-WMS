@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './editPersonal.module.css'
-import Button from '../Button/Button'
+import React from 'react';
+import styles from './editPersonal.module.css';
+import Button from '../Button/Button';
 
 function EditPersonal() {
   return (

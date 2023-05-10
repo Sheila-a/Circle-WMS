@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './success.module.css'
-import Button from '../Button/Button'
+import React from 'react';
+import styles from './success.module.css';
+import Button from '../Button/Button';
 
 function SuccessModal() {
   return (

@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './upload.module.css'
-import img from '../../../../assets/icon@2x.png'
+import React from 'react';
+import styles from './upload.module.css';
+import img from '../../../../assets/icon@2x.png';
 
 function UploadModal() {
   return (

@@ -1,6 +1,6 @@
-import RecycleMain from "../../Layout/RecycleMain/RecycleMain"
-import Sidebar from "../../Layout/Sidebar/Sidebar"
-import design from "./style.module.css"
+import RecycleMain from "../../Layout/RecycleMain/RecycleMain";
+import Sidebar from "../../Layout/Sidebar/Sidebar";
+import design from "./style.module.css";
 
 const Recycle = () => {
   return (
