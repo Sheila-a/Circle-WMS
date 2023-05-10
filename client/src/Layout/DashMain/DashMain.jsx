@@ -4,6 +4,7 @@ import Button from "../../Components/Button/Button";
 import IC1 from "../../assets/Usdc.png"
 import IC2 from "../../assets/Nig.png"
 import IC3 from "../../assets/Bottle.png"
+import { Link } from "react-router-dom";
 import DashNavbar from "../../Components/DashNavbar/DashNavbar";
 import DidYouKnow from "../../Components/DidYouKnow/DidYouKnow";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
@@ -16,8 +17,10 @@ const DashMain = () => {
         <div>
             <h2>Hello Sheila</h2>
             <p>We are on a mission to make the world cleaner through recycling and blockchain technology</p>
-            <Button content="Start recycling" style={{backgroundColor:"#8BC34A", border:"none", marginLeft:"0"}}/>
-        </div>
+            <Link to="/start-recycling">
+              <Button content="Start recycling" style={{backgroundColor:"#8BC34A", border:"none", marginLeft:"0"}}/>
+            </Link>
+            </div>
         <img src={Hero}/>
       </div>
       <div className={design.DashMain_middle}>
