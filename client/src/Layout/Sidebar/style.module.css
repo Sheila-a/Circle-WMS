@@ -21,14 +21,15 @@
   align-items: center;
   justify-content: space-between;
   color: #98a2b3;
-  padding: 20px 10px;
-  margin-bottom: 5px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   border-radius: 6px;
 }
 
 .Sidebar_tabs h3 {
   margin-left: 15px;
+  font-weight: 500;
 }
 
 .Sidebar_tabs_inner {

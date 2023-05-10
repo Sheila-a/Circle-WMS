@@ -1,27 +1,17 @@
-import design from "./style.module.css";
-import { useEffect, useState } from "react";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import design from "./style.module.css"
+import PropTypes from "prop-types";import { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded";
 import LeaderboardRoundedIcon from "@mui/icons-material/LeaderboardRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
-import SLOGO from "../../assets/logo.png";
 
-const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState("");
+
+const DashNavbar = (props) => {
+  const [activeItem, setActiveItem] = useState("dashboard");
   const location = useLocation();
-
-
-
-  //Logout Functionality
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    
-    navigate('/login')
-  }
-
 
   // update activeItem based on current location
   useEffect(() => {
@@ -31,11 +21,10 @@ const Sidebar = () => {
       setActiveItem("wallet");
     } else if (location.pathname === "/leaderboard") {
       setActiveItem("leaderboard");
-    } else if (location.pathname === "/dashboard/settings") {
+    } else if (location.pathname === "/settings") {
       setActiveItem("settings");
     }
   }, [location]);
-  
   // define active and inactive colors
   const activeBackgroundColor = "#8bc34a";
 
@@ -45,14 +34,24 @@ const Sidebar = () => {
     textDecoration: "none",
     color: "#fff",
   };
-
   return (
-    <div className={design.Sidebar_wrapper}>
-      <div className={design.Sidebar_img_wrapper}>
-        <img src={SLOGO} alt="" className={design.Sidebar_img} />
-      </div>
+    <div className={design.DashNavbar_container}>
+      <h3>{props.title} </h3>
+      <div className={design.DashNavbar_user}>
+        <img src="" alt="logo"/> 
+        <div className={design.DashNavbar_user_title}>
+            <h4>Chioma Ugwuodo</h4>
+            <p>iamchioma@gmail.com</p>
+        </div>
+         <input type="checkbox" />
+          <div className={design.hamburgerLines}>
+            <span className={`${design.line} ${design.line1}`}></span>
+            <span className={`${design.line} ${design.line2}`}></span>
+            <span className={`${design.line} ${design.line3}`}></span>
+          </div>
+          <div className={design.DashNavbar_toHide}>
       <div className={design.menuItems}>
-        {" "}
+        
         <div>
           <Link
             className={design.Sidebar_tabs}
@@ -96,7 +95,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="settings"
+            to="/settings"
             style={activeItem === "settings" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
@@ -107,11 +106,19 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-      <div className={design.Sidebar_logout} onClick={handleLogout}>
+      <div className={design.Sidebar_logout}>
       <ArrowBackIosNewRoundedIcon />  Log out 
       </div>
-    </div>
-  );
-};
+          </div>
+      </div>
 
-export default Sidebar;
+     
+    </div>
+  )
+}
+
+DashNavbar.propTypes = {
+    title: PropTypes.string.isRequired,   
+  };
+
+export default DashNavbar
