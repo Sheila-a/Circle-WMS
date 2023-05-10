@@ -31,8 +31,8 @@ function App() {
             </Route>
           </Route>
 
-          <Route element={<PublicRoute/>}>
-                <Route path="/" element={<Home />} />
+          <Route path="/" element={<PublicRoute/>}>
+                <Route path="" element={<Home />} />
                 <Route path="/signup" element={<Signup Clickhandler={handleLogin} />} />
                 <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
           </Route>
