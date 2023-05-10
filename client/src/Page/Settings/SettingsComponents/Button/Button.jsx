@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './buttonStyles.module.css'
+import React from 'react';
+import styles from './buttonStyles.module.css';
 
 function Button({text, customStyle, handleClick}) {
   return (

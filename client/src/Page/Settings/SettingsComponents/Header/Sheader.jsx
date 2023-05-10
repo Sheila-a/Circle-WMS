@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import Button from '../Button/Button'
-import styles from  './sheader.module.css'
-import img from '../../../../assets/image 12.png'
+import Button from '../Button/Button';
+import styles from  './sheader.module.css';
+import img from '../../../../assets/image 12.png';
 
 
 
