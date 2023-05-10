@@ -7,6 +7,7 @@ import Home from "./Page/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Dashboard from "./Page/Dashboard/Dashboard";
+import Recycle from "./Page/Recycle/Recycle";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
@@ -33,7 +34,7 @@ function App() {
   } else {
     return (
       <>
-        {location.pathname !== "/dashboard" && <Navbar />}
+        {(location.pathname !== "/dashboard" && location.pathname !== "/start-recycling")  && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -42,6 +43,7 @@ function App() {
           />
           <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/start-recycling" element={<Recycle />} />
         </Routes>
         <Footer />
       </>
