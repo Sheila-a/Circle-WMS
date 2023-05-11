@@ -1,0 +1,209 @@
+.DashMain_wrapper {
+  width: 75%;
+  padding-bottom: 50px;
+  background: #FCFCFD;
+}
+
+.DashMain_hero {
+  background-color: #eef6e4;
+  display: flex;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+.DashMain_hero h2 {
+  color: #344054;
+  font-weight: 500;
+}
+
+.DashMain_hero p {
+  color: #667085;
+  font-size: 15px;
+  margin: 12px 0;
+}
+
+.crd_1,
+  .crd_2,
+  .crd_3 {
+    padding: 10px 0;  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+.crd_1 {
+  background-color: #d1e9ff;color: #344054;
+}
+
+.crd_2 {
+  background-color: #fef0c7;color: #344054;
+}
+
+.crd_3 {
+  background-color: #d1fadf;color: #344054;
+}
+
+.DashMain_middle {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+.DashMain_middle_left {
+  display: flex;
+  flex-direction:column;
+  width: 65%;
+}
+
+.DashMain_middle_left_upper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.DashMain_middle_left_lower{
+  display: flex;
+  justify-content: space-between;
+  margin-top:30px;
+  gap:20px;
+}
+
+.DashMain_Transaction{
+border: 1px solid #E4E7EC;
+border-radius: 8px;
+padding:20px 15px ;
+width:50%;
+overflow-y: scroll;
+  background-color: #fff; 
+  height:418px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.DashMain_Transaction h4{
+margin-bottom: 10px;
+  color: #101828;
+}
+
+.DashMain_details {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+background: #FAFEEC;
+border-bottom: 1px solid #E1E6EF;
+border-radius: 8px;
+padding:20px 10px;
+margin-bottom:20px;
+font-size: 12px;
+}
+
+.DashMain_details:nth-child(odd){
+  
+  background: #EEFCBB;
+}
+
+.DashMain_details2{
+  background: #EEFCBB;
+}
+
+.DashMain_details2:nth-child(odd){
+  background: #FAFEEC;
+}
+
+
+
+.DashMain_middle_right {
+  width: 33%;
+}
+
+.DashMain_stations {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #D0D5DD;
+border-radius: 8px;
+color: #101828;  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.DashMain_stations p{
+  color: rgba(29, 36, 51, 0.8);
+  font-size: 12px;
+}
+
+.DashMain_stations span, .DashMain_stations span>p{
+  color: #8BC34A;
+  cursor: pointer;
+}
+
+.DashMain_stations_detail{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid #D0D5DD;
+}
+
+.DashMain_collect{
+  width: 100px;
+}
+
+.DashMain_stations span, .DashMain_stations span>p:hover{
+  display: flex;
+  align-items: center;
+}
+
+.DashMain_stations span:hover {
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+
+  .DashMain_middle{
+    flex-direction: column;
+  }
+
+ .DashMain_middle_left,.DashMain_middle_right,.DashMain_Transaction,.DashMain_stations{
+   width: 100% !important;
+ }
+
+  .DashMain_middle_left_upper {
+    flex-direction: column;
+  }
+
+  .DashMain_middle_right {
+    width: 0;
+  }
+
+  .crd_1,
+  .crd_2,
+  .crd_3 {
+    margin-bottom: 20px;
+  }
+
+  .DashMain_middle_left_lower{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 960px) {
+  .DashMain_wrapper {
+    width: 100%;
+  }
+
+  .DashMain_hero {
+    padding: 10px 50px 20px 50px;
+  }
+
+  .DashMain_hero img {
+    display: none;
+  }
+}
+
+@media (max-width:500px){
+  .DashMain_hero {   
+    padding: 0px 25px 15px 25px;
+  }
+
+  .DashMain_middle {
+    margin: 25px 25px 0 25px;
+  }
+}
