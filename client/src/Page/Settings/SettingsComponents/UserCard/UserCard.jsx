@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './userCard.module.css';
 import img from '../../../../assets/Ellipse 7.png';
-import camera from '../../../../assets/icon.png';
+import camera from '../../../../assets/Icon.png';
 
 
 
