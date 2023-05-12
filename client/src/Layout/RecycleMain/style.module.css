@@ -109,10 +109,22 @@
     .RecycleMain_container{
         width: 100%;
     }
+
+    .RecycleMain_middle{
+      flex-direction: column;
+    }
+
+    .RecycleMain_middle_left,.RecycleMain_middle_right{
+      width: 100%;
+    }
   }
 
   @media (max-width:500px){
     .RecycleMain_hero {   
       padding: 0px 25px 15px 25px;
+    }
+
+    .RecycleMain_middle{
+      margin: 25px 25px 0 25px;
     }
   }  
