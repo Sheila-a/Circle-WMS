@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import Dashboard from '../Page/Dashboard/Dashboard';
 
 function PrivateRoutes() {
-  let auth = {'token': true}
+  let auth = {'token': false}
   return (
     auth.token ?
     <>
