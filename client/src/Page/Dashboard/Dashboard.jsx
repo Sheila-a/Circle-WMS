@@ -9,9 +9,8 @@ const Dashboard = () => {
   return (
     <div className={design.Dashboard_wrapper}>
       <Sidebar />
-      <div style={{ width: "76%" }}>
-        <Outlet/>
-
+      <div className={design.outlet}>
+        <Outlet/> 
       </div>
     </div>
   );
