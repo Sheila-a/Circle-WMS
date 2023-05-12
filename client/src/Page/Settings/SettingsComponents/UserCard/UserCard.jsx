@@ -2,6 +2,7 @@ import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './userCard.module.css';
 import img from '../../../../assets/Ellipse 7.png';
+import PropTypes from "prop-types";
 import camera from '../../../../assets/Icon.png';
 
 
@@ -70,5 +71,10 @@ function UserCard({name, email}) {
     </div>
   )
 }
+
+UserCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+};
 
 export default UserCard

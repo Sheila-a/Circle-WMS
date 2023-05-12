@@ -1,6 +1,5 @@
-import React from 'react';
-
-import Button from '../Button/Button';
+import { Link } from "react-router-dom";
+import Button from '../../../../Components/Button/Button';
 import styles from  './sheader.module.css';
 import img from '../../../../assets/image 12.png';
 
@@ -14,7 +13,10 @@ function Sheader() {
         <section>
             <h1>Hello Sheila</h1>
             <p>Make Changes that are personalized to you.</p>
-            <Button text='Start recycling' />
+            
+            <Link to="start-recycling">
+              <Button content="Start recycling" style={{backgroundColor:"#8BC34A", border:"none", marginLeft:"0"}}/>
+            </Link>
         </section>
 
         <figure className={styles['header-img-container']}>
