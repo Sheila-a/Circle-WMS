@@ -17,12 +17,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
-<<<<<<< HEAD
     "axios": "^1.4.0",
-=======
     "instascan": "^1.0.0",
     "jsqr": "^1.4.0",
->>>>>>> ffab0240ea64237610c47a8a3f0d3adddb62726e
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1"
