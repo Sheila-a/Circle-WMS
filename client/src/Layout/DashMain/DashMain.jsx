@@ -17,7 +17,7 @@ const DashMain = () => {
         <div>
             <h2>Hello Sheila</h2>
             <p>We are on a mission to make the world cleaner through recycling and blockchain technology</p>
-            <Link to="/start-recycling">
+            <Link to="start-recycling">
               <Button content="Start recycling" style={{backgroundColor:"#8BC34A", border:"none", marginLeft:"0"}}/>
             </Link>
             </div>

@@ -1,5 +1,6 @@
 import DashNavbar from "../../Components/DashNavbar/DashNavbar";
 import design from "./style.module.css";
+import QRCodeScanner from "../../Components/QrScanner/QrScanner"
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import Hero from "../../assets/dash_hero.png";
 import DidYouKnow from "../../Components/DidYouKnow/DidYouKnow";
@@ -17,7 +18,9 @@ const RecycleMain = () => {
         <img src={Hero}/>
       </div>
       <div className={design.RecycleMain_middle}>
-        <div className={design.RecycleMain_middle_left}>mjhvujmgvujyfvym</div>
+        <div className={design.RecycleMain_middle_left}>
+            < QRCodeScanner />
+        </div>
         <div className={design.RecycleMain_middle_right}>
             <DidYouKnow />
             <div className={design.RecycleMain_stations}>

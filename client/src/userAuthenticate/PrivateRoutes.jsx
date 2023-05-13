@@ -1,5 +1,6 @@
-import React from 'react';
-import {useLocation, Navigate, Outlet } from 'react-router-dom';
+
+import {useLocation, Navigate } from 'react-router-dom';
+
 import Dashboard from '../Page/Dashboard/Dashboard';
 import AuthContext from '../context/AuthProvider';
 import { useContext } from 'react';
@@ -16,7 +17,6 @@ function PrivateRoutes() {
     auth?.success ?
     <>
     <Dashboard/>
-
     </> 
      : 
     
