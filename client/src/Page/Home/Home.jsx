@@ -4,8 +4,17 @@ import HowItWorks from "./HomeComponents/HowItWorks/HowItWorks";
 import TrackBIRC from "./HomeComponents/TrackBIRC/TrackBIRC";
 import WhatWeDo from "./HomeComponents/WhatWeDo/WhatWeDo";
 import Footer from "../../Components/Footer/Footer";
+import AuthContext from "../../context/AuthProvider";
+import { useContext, useEffect } from "react";
 
 const Home = () => {
+
+  const auth = useContext(AuthContext)
+  
+  useEffect(() => {
+    console.log(auth)
+  }, [auth])
+  
   return (
     <div>
       <Hero />

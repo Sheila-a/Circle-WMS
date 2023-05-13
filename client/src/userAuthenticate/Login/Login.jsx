@@ -7,7 +7,7 @@ import recycleHand from '../../assets/LoginImg.png';
 import google from '../../assets/Social icon.png';
 import linekdln from '../../assets/Vector.png';
 
-import '../../context/AuthProvider'
+import AuthContext from '../../context/AuthProvider'; 
 import axios from 'axios';
 const LOGIN_URL = 'https://circle-wms.onrender.com/api/v1/users/login';
 
@@ -16,13 +16,17 @@ function Login({Clickhandler}) {
   const emailRef = useRef();
   const errRef = useRef();
 
+  const auth = useContext(AuthContext)
+  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false);
+  const [successMsg, setSuccessMSg] = useState('')
 
   useEffect(() => {
-        EmailRef.current.focus();
+        emailRef.current.focus();
     }, [])
 
     useEffect(() => {
@@ -34,19 +38,27 @@ function Login({Clickhandler}) {
 
         try {
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ email, password }),
+                JSON.stringify({email, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data));
-            console.log(JSON.stringify(response));
-            const accessToken = response?.data?.accessToken;
-            setAuth({ user, pwd, accessToken });
-            setUser('');
-            setPwd('');
+            const apiResponse = JSON.stringify(response?.data);
+            console.log(apiResponse);
+            const user = apiResponse.user.fullname;
+            const userId = apiResponse.user._id;
+            const message = apiResponse.message;
+            console.log({ user, userId, message})
+            
+            setAuth({ user, userId});
+            console.log('auth:', auth)
+
+
+            
+            setEmail('');
+            setPassword('');
             setSuccess(true);
+            setSuccessMSg(message)
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -76,6 +88,8 @@ function Login({Clickhandler}) {
         </header>
 
         <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen} aria-live="assertive">{errMsg}</p>
+        <p className={styles.successMsg}>{successMsg}</p>
+        
 
         <section className={styles['content']}>
           <form onSubmit={handleSubmit}>
@@ -104,12 +118,16 @@ function Login({Clickhandler}) {
             required
             placeholder='Create a password' />
           <p className={styles['caption']}>Must be at least 8 characters long</p>
-        </form>
 
-        <Button
+
+          <Button
           handleclick={Clickhandler}
           style={{background: '#7F56D9', width: "99%"}}
           text='Login'/>
+
+        </form>
+
+        
       
         <p className={styles['texty']}>Dont have an account? <Link to='/signup'><span>Sign up</span></Link></p>
         <div className={styles['liney-texty']}>

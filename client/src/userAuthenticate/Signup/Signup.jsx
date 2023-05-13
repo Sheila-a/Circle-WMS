@@ -58,37 +58,36 @@ function Signup({ Clickhandler }) {
 
 
   const handleSubmit = async (e) => {
-        console.log({fullName, password})
         e.preventDefault();
         // if button enabled with JS hack
-        const v1 = USER_REGEX.test(user);
-        const v2 = PWD_REGEX.test(pwd);
+        const v1 = USERNAME_REGEX.test(fullName);
+        const v2 = PASSWORD_REGEX.test(password);
         if (!v1 || !v2) {
             setErrMsg("Invalid Entry");
             return;
         }
+
         try {
-            const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
+            const response = await axios.post(SIGNUP_URL,
+                JSON.stringify({ fullName, email,  password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+                    
                 }
             );
             console.log(response?.data);
-            console.log(response?.accessToken);
             console.log(JSON.stringify(response))
             setSuccess(true);
-            setUser('');
-            setPwd('');
-            setMatchPwd('');
+            setFuame('');
+            setPassword('');
+            setEmail('');
         } catch (err) {
             if (!err?.response) {
-                setErrMsg('No Server Response');
+                setErrMessage('No Server Response');
             } else if (err.response?.status === 409) {
-                setErrMsg('Username or Email Taken');
+                setErrMessage('Username or Email Taken');
             } else {
-                setErrMsg('Registration Failed')
+                setErrMessage('Registration Failed')
             }
             errRef.current.focus();
         }
@@ -214,13 +213,15 @@ function Signup({ Clickhandler }) {
               <p className={styles["caption"]}>
                 Must be at least 8 characters long
               </p>
-            </form>
 
-            <Button
+              <Button
               handleclick={Clickhandler}
               style={{ background: "#7F56D9", width: "99%" }}
               text="Create account"
             />
+            </form>
+
+            
 
             <p className={styles["texty"]}>
               Already have an account?
