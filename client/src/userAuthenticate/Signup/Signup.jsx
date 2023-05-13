@@ -75,10 +75,11 @@ function Signup({ Clickhandler }) {
                     
                 }
             );
-            console.log(response?.data);
-            console.log(JSON.stringify(response))
+
+            const apiResponse = response?.data
+            console.log(apiResponse);
             setSuccess(true);
-            setFuame('');
+            setFullName('');
             setPassword('');
             setEmail('');
         } catch (err) {
@@ -97,7 +98,7 @@ function Signup({ Clickhandler }) {
   return (
     <>
       {success? (
-        <section>
+        <section className={styles['page-like']}>
           <h1>Success, Your Account has been created</h1>
           <Link to='/login'> Sign in here</Link>
         </section>
@@ -215,7 +216,6 @@ function Signup({ Clickhandler }) {
               </p>
 
               <Button
-              handleclick={Clickhandler}
               style={{ background: "#7F56D9", width: "99%" }}
               text="Create account"
             />
@@ -257,11 +257,5 @@ function Signup({ Clickhandler }) {
     
   );
 }
-
-Signup.propTypes = {
-  Clickhandler: PropTypes.func.isRequired,
-  disabled: PropTypes.bool
-
-};
 
 export default Signup;

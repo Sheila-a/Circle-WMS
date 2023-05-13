@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import Button from '../Button/Button';
 import styles from './login.module.css';
@@ -11,13 +11,16 @@ import AuthContext from '../../context/AuthProvider';
 import axios from 'axios';
 const LOGIN_URL = 'https://circle-wms.onrender.com/api/v1/users/login';
 
-function Login({Clickhandler}) {
+function Login({ Clickhandler }) {
+
   const { setAuth } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location =  useLocation();
+  const from = location.state?.from?.pathname || '/';
+
   const emailRef = useRef();
   const errRef = useRef();
-
-  const auth = useContext(AuthContext)
-  
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -43,22 +46,16 @@ function Login({Clickhandler}) {
                     headers: { 'Content-Type': 'application/json' },
                 }
             );
-            const apiResponse = JSON.stringify(response?.data);
+            
+            const apiResponse = response?.data;
+            setAuth(apiResponse);
             console.log(apiResponse);
-            const user = apiResponse.user.fullname;
-            const userId = apiResponse.user._id;
-            const message = apiResponse.message;
-            console.log({ user, userId, message})
-            
-            setAuth({ user, userId});
-            console.log('auth:', auth)
 
-
-            
             setEmail('');
             setPassword('');
             setSuccess(true);
-            setSuccessMSg(message)
+            setSuccessMSg(apiResponse.message);
+            navigate('/dashboard');
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
