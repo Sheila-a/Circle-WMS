@@ -9,13 +9,18 @@ import DashNavbar from "../../Components/DashNavbar/DashNavbar";
 import DidYouKnow from "../../Components/DidYouKnow/DidYouKnow";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import DashCard from "../../Components/DashCard/DashCard";
+
+import AuthContext from "../../context/AuthProvider";
+import { useContext } from "react";
+
 const DashMain = () => {
+  const { auth } = useContext(AuthContext);
   return (
     <div className={design.DashMain_wrapper}>
       <DashNavbar title="Home"/>
       <div className={design.DashMain_hero}>
         <div>
-            <h2>Hello Sheila</h2>
+            <h2>Hello {auth?.user?.fullName}</h2>
             <p>We are on a mission to make the world cleaner through recycling and blockchain technology</p>
             <Link to="start-recycling">
               <Button content="Start recycling" style={{backgroundColor:"#8BC34A", border:"none", marginLeft:"0"}}/>

@@ -8,8 +8,15 @@ import LeaderboardRoundedIcon from "@mui/icons-material/LeaderboardRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 
+import AuthContext from "../../context/AuthProvider"; 
+import { useContext } from "react";
+
 
 const DashNavbar = (props) => {
+
+  const { auth } = useContext(AuthContext);
+  
+  
   const [activeItem, setActiveItem] = useState("dashboard");
   const location = useLocation();
 
@@ -40,8 +47,8 @@ const DashNavbar = (props) => {
       <div className={design.DashNavbar_user}>
         <img src="" alt="logo"/> 
         <div className={design.DashNavbar_user_title}>
-            <h4>Chioma Ugwuodo</h4>
-            <p>iamchioma@gmail.com</p>
+            <h4>{auth?.user?.fullName}</h4>
+            <p>{auth?.user?.email}</p>
         </div>
          <input type="checkbox" />
           <div className={design.hamburgerLines}>

@@ -1,4 +1,4 @@
-import { Routes, Route,  useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./userAuthenticate/Login/Login";
 import Signup from "./userAuthenticate/Signup/Signup";
 import Home from "./Page/Home/Home";
@@ -16,13 +16,6 @@ import PublicRoute from "./userAuthenticate/PublicRoute";
 
 function App() {
 
-  const navigate = useNavigate()
-
-  const handleLogin = () => {
-    navigate('/dashboard')
-  };
-
-
     return (
       <>
         <Routes>
@@ -38,8 +31,8 @@ function App() {
 
           <Route path="/" element={<PublicRoute/>}>
                 <Route path="" element={<Home />} />
-                <Route path="/signup" element={<Signup Clickhandler={handleLogin} />} />
-                <Route path="/login" element={<Login Clickhandler={handleLogin} />} />
+                <Route path="/signup" element={<Signup  />} />
+                <Route path="/login" element={<Login />} />
           </Route>
         </Routes>
 
