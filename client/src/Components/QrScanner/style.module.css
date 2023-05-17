@@ -5,3 +5,8 @@
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+.QR_container p {
+  color: #667085;
+  margin-top: 10px;
+}
