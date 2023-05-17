@@ -10,7 +10,7 @@ import UserCard from '../SettingsComponents/UserCard/UserCard';
 
 function Settings() {
   return (
-    <div className={styles['settings-pg']}>
+    <div className={styles['settings-pg']} data-aos="zoom-in" data-aos-duration="1000">
    
       <DashNavbar title="Settings"/>
       <Sheader/>

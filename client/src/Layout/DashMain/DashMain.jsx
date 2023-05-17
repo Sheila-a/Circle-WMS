@@ -11,7 +11,7 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import DashCard from "../../Components/DashCard/DashCard";
 const DashMain = () => {
   return (
-    <div className={design.DashMain_wrapper}>
+    <div className={design.DashMain_wrapper}  data-aos="zoom-in" data-aos-duration="1000">
       <DashNavbar title="Home"/>
       <div className={design.DashMain_hero}>
         <div>

@@ -1,7 +1,5 @@
-import DashMain from "../../Layout/DashMain/DashMain";
 import Sidebar from "../../Layout/Sidebar/Sidebar";
 import design from "./style.module.css";
-import Settings from "../Settings/SettingsPage/Settings";
 import { Outlet } from "react-router-dom";
 
 

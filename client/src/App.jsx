@@ -12,6 +12,7 @@ import EditPassword from "./Page/Settings/SettingsComponents/EditPassword/EditPa
 
 import PrivateRoutes from "./userAuthenticate/PrivateRoutes";
 import PublicRoute from "./userAuthenticate/PublicRoute";
+import LeaderMain from "./Layout/LeaderMain/LeaderMain";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="dashboard" element={<PrivateRoutes/>}>          
             <Route path="" element={<DashMain />} />
             <Route path="start-recycling" element={<RecycleMain />} />
+            <Route path="leaderboard" element={<LeaderMain />} />
             
             <Route path="settings" element={<Settings/>}>
                 <Route path="personal" element={<EditPersonal/>}/>
