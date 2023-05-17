@@ -11,7 +11,9 @@ import AuthContext from "../../context/AuthProvider";
 import DashCard from "../../Components/DashCard/DashCard";
 import DashNavbar from "../../Components/DashNavbar/DashNavbar";
 import DidYouKnow from "../../Components/DidYouKnow/DidYouKnow";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import TransactionHistory from "../../Components/TransactionHistory/TransactionHistory";
+import RecycleHistory from "../../Components/RecycleHistory/RecycleHistory";
+import AvailableStations from "../../Components/AvailableStations/AvailableStations";
 
 const DashMain = () => {
   const { auth } = useContext(AuthContext);
@@ -79,60 +81,13 @@ const DashMain = () => {
             />
           </div>
           <div className={design.DashMain_middle_left_lower}>
-            <div className={design.DashMain_Transaction}>
-              <h4>Transaction History</h4>
-
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <ColorfulPTag content="+NGN 2,000" />
-              </div>
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Withdrawal</p>
-                <ColorfulPTag content="-NGN 2,000" />
-              </div>
-            </div>
-            <div className={design.DashMain_Transaction}>
-              <h4>Recycle History</h4>
-              <div
-                className={`${design.DashMain_details} ${design.DashMain_details2}`}
-              >
-                <p>Feb 22</p>
-                <p>20 bottles</p>
-
-                <ColorfulPTag content="+20 USDC" />
-              </div>
-              <div
-                className={`${design.DashMain_details} ${design.DashMain_details2}`}
-              >
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <ColorfulPTag content="+20 USDC" />
-              </div>
-            </div>
+            <TransactionHistory />
+            <RecycleHistory />
           </div>
         </div>
         <div className={design.DashMain_middle_right}>
           <DidYouKnow />
-          <div className={design.DashMain_stations}>
-            <h4>Available stations</h4>
-            <p>Near your location</p>
-            <div className={design.DashMain_stations_detail}>
-              <p className={design.DashMain_collect}>Abakpa collection unit</p>
-              <span>
-                <p>View in map</p>
-                <ArrowForwardIosRoundedIcon style={{ fontSize: "12px" }} />
-              </span>
-            </div>
-            <div className={design.DashMain_stations_detail}>
-              <p className={design.DashMain_collect}>Abakpa collection unit</p>
-              <span>
-                <p>View in map</p>
-                <ArrowForwardIosRoundedIcon style={{ fontSize: "12px" }} />
-              </span>
-            </div>
-          </div>
+          <AvailableStations />
         </div>
       </div>
     </div>
