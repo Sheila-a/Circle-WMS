@@ -12,6 +12,10 @@ import EditPassword from "./Page/Settings/SettingsComponents/EditPassword/EditPa
 
 import PrivateRoutes from "./userAuthenticate/PrivateRoutes";
 import PublicRoute from "./userAuthenticate/PublicRoute";
+import Wallet from "./Page/Wallet/WalletPage/Wallet";
+import WalletMain from "./Page/Wallet/WalletComponents/WalletMain/WalletMain";
+import SendFunds from "./Page/Wallet/WalletComponents/SendFunds/SendFunds";
+import SendFundsAmount from "./Page/Wallet/WalletComponents/SendFundsAmount/SendFundsAmount";
 
 
 function App() {
@@ -22,9 +26,14 @@ function App() {
           <Route path="dashboard" element={<PrivateRoutes/>}>          
             <Route path="" element={<DashMain />} />
             <Route path="start-recycling" element={<RecycleMain />} />
-            
+            <Route path="wallet" element={<Wallet/>} >
+              <Route path="" element={<WalletMain/>}/>
+              <Route path="send-funds" element={<SendFunds/>}/>
+              <Route path="send-funds-amount" element={<SendFundsAmount/>}/>
+            </Route>
+
             <Route path="settings" element={<Settings/>}>
-                <Route path="personal" element={<EditPersonal/>}/>
+                <Route path="" element={<EditPersonal/>}/>
                 <Route path="password" element={<EditPassword/>}/>
             </Route>
           </Route>
