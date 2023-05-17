@@ -5,13 +5,21 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import Hero from "../../assets/dash_hero.png";
 import DidYouKnow from "../../Components/DidYouKnow/DidYouKnow";
 
+import AuthContext from "../../context/AuthProvider"; 
+import { useContext } from "react";
+
+
+
 const RecycleMain = () => {
+
+  const { auth } = useContext(AuthContext);
+
   return (
     <div className={design.RecycleMain_container}>
       <DashNavbar title="Home / Recycle"/>
       <div className={design.RecycleMain_hero}>
         <div>
-            <h2>Hello Sheila</h2>
+            <h2>{auth?.user?.fullName}</h2>
             <p>Scan the QR code found on any of our machines to get started recycling</p>
            
         </div>
