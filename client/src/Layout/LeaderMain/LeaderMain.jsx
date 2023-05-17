@@ -44,18 +44,19 @@ const LeaderMain = () => {
   const sortedUsers = filteredUsers.sort((a, b) => b.bottles - a.bottles);
 
   const renderUser = (user, index) => (
-    <tr key={user.name}>
-      <td>{index + 1}</td>
-      <td>{user.name}</td>
-      <td>{user.bottles}</td>
-    </tr>
+    <div key={user.name} className={design.trow}>
+      <p className={design.rank}>{index + 1}</p>
+      <p>{user.name}</p>
+      <p>{user.group}</p>
+      <p>{user.bottles}</p>
+    </div>
   );
 
   return (
     <div
       className={design.LeaderMain_wrapper}
-      data-aos="zoom-in"
-      data-aos-duration="1000"
+      // data-aos="zoom-in"
+      // data-aos-duration="1000"
     >
       <DashNavbar title="Leaderboard" />
       <div className={design.LeaderMain_hero}>
@@ -77,29 +78,23 @@ const LeaderMain = () => {
         </div>
         <img src={Hero} />
       </div>
-      <div>
-        <h2>User Rankings</h2>
-        <div>
-          <label htmlFor="group-select">Select Group:</label>
-          <select id="group-select" onChange={handleGroupChange}>
-            {groups.map((group) => (
-              <option key={group.value} value={group.value}>
-                {group.label}
-              </option>
-            ))}
-          </select>
+      <div className={`${design.LeaderMain_middle} ${design.grayed_out}`}>
+        <div className={design.LeaderMain_tit_flex}>
+          <p>Top Leads</p>
+          <div>
+            <label htmlFor="group-select">Select Group:</label>
+            <select id="group-select" onChange={handleGroupChange}>
+              {groups.map((group) => (
+                <option key={group.value} value={group.value}>
+                  {group.label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <table>
-          <thead>
-            {" "}
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Bottles Recycled</th>
-            </tr>
-          </thead>
-          <tbody>{sortedUsers.map(renderUser)}</tbody>
-        </table>
+        <div className={design.LeaderMain_board}>
+          {sortedUsers.map(renderUser)}
+        </div>
       </div>
     </div>
   );

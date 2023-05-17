@@ -60,56 +60,37 @@ const DashMain = () => {
               icons={IC1}
               title="USDC"
               value="Balance"
-              number="234"
+              number="0"
               className={design.crd_1}
             />
             <DashCard
               icons={IC2}
               title="Nigeria"
               value="Leaderboard"
-              number="8"
+              number="0"
               className={design.crd_2}
             />
             <DashCard
               icons={IC3}
               title="Plastic bottles"
               value="Total recycled"
-              number="55"
+              number="0"
               className={design.crd_3}
             />
           </div>
           <div className={design.DashMain_middle_left_lower}>
             <div className={design.DashMain_Transaction}>
               <h4>Transaction History</h4>
+
               <div className={design.DashMain_details}>
                 <p>Feb 22</p>
                 <p>Top up</p>
-                <p>+NGN 2,000</p>
+                <ColorfulPTag content="+NGN 2,000" />
               </div>
               <div className={design.DashMain_details}>
                 <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div className={design.DashMain_details}>
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
+                <p>Withdrawal</p>
+                <ColorfulPTag content="-NGN 2,000" />
               </div>
             </div>
             <div className={design.DashMain_Transaction}>
@@ -127,21 +108,7 @@ const DashMain = () => {
               >
                 <p>Feb 22</p>
                 <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div
-                className={`${design.DashMain_details} ${design.DashMain_details2}`}
-              >
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
-              </div>
-              <div
-                className={`${design.DashMain_details} ${design.DashMain_details2}`}
-              >
-                <p>Feb 22</p>
-                <p>Top up</p>
-                <p>+NGN 2,000</p>
+                <ColorfulPTag content="+20 USDC" />
               </div>
             </div>
           </div>
