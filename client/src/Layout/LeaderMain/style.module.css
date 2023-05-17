@@ -1,0 +1,23 @@
+.LeaderMain_wrapper{
+    padding-bottom: 50px;
+    background: #FCFCFD;
+}
+
+.LeaderMain_hero{
+    background-color: #eef6e4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.LeaderMain_hero h2 {
+    color: #344054;
+  font-weight: 500;
+}
+
+.LeaderMain_hero p{
+    color: #667085;
+  font-size: 15px;
+  margin: 12px 0;
+}
