@@ -16,6 +16,8 @@ import Wallet from "./Page/Wallet/WalletPage/Wallet";
 import WalletMain from "./Page/Wallet/WalletComponents/WalletMain/WalletMain";
 import SendFunds from "./Page/Wallet/WalletComponents/SendFunds/SendFunds";
 import SendFundsAmount from "./Page/Wallet/WalletComponents/SendFundsAmount/SendFundsAmount";
+import SendFundsConfirm from "./Page/Wallet/WalletComponents/SendFundsConfirm/SendFundsConfirm";
+import ConvertFunds from "./Page/Wallet/WalletComponents/ConvertFunds/ConvertFunds";
 
 
 function App() {
@@ -28,8 +30,10 @@ function App() {
             <Route path="start-recycling" element={<RecycleMain />} />
             <Route path="wallet" element={<Wallet/>} >
               <Route path="" element={<WalletMain/>}/>
+              <Route path="convert-funds" element={<ConvertFunds/>}/>
               <Route path="send-funds" element={<SendFunds/>}/>
               <Route path="send-funds-amount" element={<SendFundsAmount/>}/>
+              <Route path="send-funds-confirm" element={<SendFundsConfirm/>}/>
             </Route>
 
             <Route path="settings" element={<Settings/>}>

@@ -1,8 +1,15 @@
 import Button from '../../../Settings/SettingsComponents/Button/Button'
 import Goback from '../GoBackPill/Goback'
 import styles from './sendFundsAmount.module.css'
+import { useNavigate } from 'react-router-dom'
 
 function SendFundsAmount() {
+  const navigate = useNavigate()
+
+  function nextPage(){
+    navigate('/dashboard/wallet/send-funds-confirm')
+  }
+
   return (
     <div className={styles['layout']}>
       <Goback/>
@@ -30,7 +37,7 @@ function SendFundsAmount() {
         <p className={styles['rate']}>1 USDC = NGN 460</p>
       </article>
 
-      <Button text='Continue' customStyle={{'width': '96%'}}/>
+      <Button text='Continue' customStyle={{'width': '96%'}} handleClick={ nextPage }/>
     </div>
   )
 }

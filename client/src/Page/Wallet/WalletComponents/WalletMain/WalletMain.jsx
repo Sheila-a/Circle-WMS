@@ -7,12 +7,25 @@ import IC2 from '../../../../assets/naira.png'
 import btn1 from '../../../../assets/rewind.png'
 import btn2 from '../../../../assets/play.png'
 
+import { useNavigate } from 'react-router-dom'
+
 function WalletMain() {
+  const navigate = useNavigate()
+
+  function handleConvert(){
+    navigate('/dashboard/wallet/convert-funds')
+  }
+
+  function handleSend(){
+    navigate('/dashboard/wallet/send-funds')
+  }
+
   return (
       <div className={styles['layout-1']}>
           <section className={styles['btn-container']}>
-                <ButtonPill img={btn1} action='convert'/>
-                <ButtonPill img={btn2} action='send'/>
+                
+                <ButtonPill img={btn1} action='convert' handleClick={handleConvert}/>
+                <ButtonPill img={btn2} action='send' handleClick={handleSend}/>
           </section>
 
           <section className={styles['balance-pill-container']}>

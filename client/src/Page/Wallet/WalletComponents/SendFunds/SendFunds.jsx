@@ -3,8 +3,17 @@ import styles from './sendFunds.module.css'
 import IC from '../../../../assets/bank.png'
 import BankAccountPill from '../BankAccountPill/BankAccountPill'
 import Button from '../../../Settings/SettingsComponents/Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 function SendFunds() {
+
+  const navigate = useNavigate()
+
+  function nextPage(){
+    navigate('/dashboard/wallet/send-funds-amount')
+  }
+
+
   return (
     <div className={styles['layout']}>
       <Goback/>
@@ -38,7 +47,7 @@ function SendFunds() {
             />
       </section>
 
-      <Button text='Continue' customStyle={{'width': '100%'}}/>
+      <Button text='Continue' customStyle={{'width': '100%'}} handleClick={ nextPage }/>
     </div>
   )
 }
