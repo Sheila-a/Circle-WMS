@@ -14,7 +14,7 @@ function UserCard({name, email}) {
 
   //Update activeItem based on currentlocation
   useEffect(() => {
-    if(location.pathname === '/dashboard/settings/personal'){
+    if(location.pathname === '/dashboard/settings'){
       setActiveItem('profile');
     }else if(location.pathname === '/dashboard/settings/password'){
       setActiveItem('password');
@@ -52,7 +52,7 @@ function UserCard({name, email}) {
       <section className={styles['section-2']}>
         <Link
             className={styles['link_style']}
-            to='personal'
+            to=''
             style={activeItem === "profile" ? activeLinkStyle : {}}
         >
           Profile

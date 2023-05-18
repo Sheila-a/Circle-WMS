@@ -12,23 +12,37 @@ import EditPassword from "./Page/Settings/SettingsComponents/EditPassword/EditPa
 
 import PrivateRoutes from "./userAuthenticate/PrivateRoutes";
 import PublicRoute from "./userAuthenticate/PublicRoute";
+import Wallet from "./Page/Wallet/WalletPage/Wallet";
+import WalletMain from "./Page/Wallet/WalletComponents/WalletMain/WalletMain";
+import SendFunds from "./Page/Wallet/WalletComponents/SendFunds/SendFunds";
+import SendFundsAmount from "./Page/Wallet/WalletComponents/SendFundsAmount/SendFundsAmount";
+import SendFundsConfirm from "./Page/Wallet/WalletComponents/SendFundsConfirm/SendFundsConfirm";
+import ConvertFunds from "./Page/Wallet/WalletComponents/ConvertFunds/ConvertFunds";
+
 import LeaderMain from "./Layout/LeaderMain/LeaderMain";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="dashboard" element={<PrivateRoutes />}>
-          <Route path="" element={<DashMain />} />
-          <Route path="start-recycling" element={<RecycleMain />} />
-          <Route path="leaderboard" element={<LeaderMain />} />
+      <>
+        <Routes>
+          <Route path="dashboard" element={<PrivateRoutes/>}>          
+            <Route path="" element={<DashMain />} />
+            <Route path="start-recycling" element={<RecycleMain />} />
+            <Route path="leaderboard" element={<LeaderMain />} />
+            <Route path="wallet" element={<Wallet/>} >
+              <Route path="" element={<WalletMain/>}/>
+              <Route path="convert-funds" element={<ConvertFunds/>}/>
+              <Route path="send-funds" element={<SendFunds/>}/>
+              <Route path="send-funds-amount" element={<SendFundsAmount/>}/>
+              <Route path="send-funds-confirm" element={<SendFundsConfirm/>}/>
+            </Route>
 
-          <Route path="settings" element={<Settings />}>
-            <Route path="personal" element={<EditPersonal />} />
-            <Route path="password" element={<EditPassword />} />
+            <Route path="settings" element={<Settings/>}>
+                <Route path="" element={<EditPersonal/>}/>
+                <Route path="password" element={<EditPassword/>}/>
+            </Route>
           </Route>
-        </Route>
-
+          
         <Route path="/" element={<PublicRoute />}>
           <Route path="" element={<Home />} />
           <Route path="/signup" element={<Signup />} />

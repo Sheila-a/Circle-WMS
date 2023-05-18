@@ -27,7 +27,7 @@ const Sidebar = () => {
   useEffect(() => {
     if (location.pathname === "/dashboard") {
       setActiveItem("dashboard");
-    } else if (location.pathname === "/wallet") {
+    } else if (location.pathname === "/dashboard/wallet") {
       setActiveItem("wallet");
     } else if (location.pathname === "/dashboard/leaderboard") {
       setActiveItem("leaderboard");
@@ -70,7 +70,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="/wallet"
+            to="wallet"
             style={activeItem === "wallet" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
