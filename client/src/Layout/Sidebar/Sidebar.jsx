@@ -29,7 +29,7 @@ const Sidebar = () => {
       setActiveItem("dashboard");
     } else if (location.pathname === "/dashboard/wallet") {
       setActiveItem("wallet");
-    } else if (location.pathname === "/leaderboard") {
+    } else if (location.pathname === "/dashboard/leaderboard") {
       setActiveItem("leaderboard");
     } else if (location.pathname === "/dashboard/settings") {
       setActiveItem("settings");
@@ -83,7 +83,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="/leaderboard"
+            to="leaderboard"
             style={activeItem === "leaderboard" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>

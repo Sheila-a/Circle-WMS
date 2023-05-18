@@ -2,6 +2,11 @@ import styles from './walletMain.module.css'
 import ButtonPill from '../ButtonPill/ButtonPill'
 import BalancePill from '../BalancePill/BalancePill'
 import WatchListCard from '../WatchListCard/WatchListCard'
+import AvailableStations from '../../../../Components/AvailableStations/AvailableStations'
+import RecycleHistory from '../../../../Components/RecycleHistory/RecycleHistory'
+import TransactionHistory from '../../../../Components/TransactionHistory/TransactionHistory'
+
+
 import IC1 from '../../../../assets/Usdc.png'
 import IC2 from '../../../../assets/naira.png'
 import btn1 from '../../../../assets/rewind.png'

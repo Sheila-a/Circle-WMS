@@ -5,62 +5,37 @@
   font-family: "Poppins", sans-serif;
 }
 
-.sheader{
-  height: 200px;
-  width: 100%;
-  padding: 189px 3vw 100px 3vw;
-  background: #EEF6E4;
+.sheader {
+  background-color: #eef6e4;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  padding: 0px 50px;
+  justify-content: space-between;
 }
 
-.sheader section{
-  font-weight: 400;
-}
-
-.sheader section h1{
-  font-size: 28px;
+.sheader h2 {
   color: #344054;
-  margin-bottom: 13px;
+  font-weight: 500;
 }
 
-.sheader section p{
+.sheader p {
   color: #667085;
-  font-size: 14px;
-  margin-bottom: 13px;
+  font-size: 15px;
+  margin: 12px 0;
 }
 
-
-.sheader .header-img-container{
-  width: 314px;
-  height: 197px;
-  background: transparent;
-}
-
-.header-img{
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-
-@media screen and (max-width: 768px){
-  .sheader{
-    width: 378px;
-    padding-top: 220px;
-    padding-left: 10vw
+@media (max-width: 960px) {
+  .sheader {
+    padding: 10px 50px 20px 50px;
   }
-  
-  .sheader .header-img-container{
+
+  .sheader img {
     display: none;
   }
+}
 
-  .sheader section h1{
-    font-size: 22px;
-  }
-
-  .sheader section p{
-    font-size: 13px;
+@media (max-width: 500px) {
+  .sheader {
+    padding: 0px 25px 15px 25px;
   }
 }

@@ -3,15 +3,15 @@ import design from "./style.module.css";
 import { Outlet } from "react-router-dom";
 
 
-const Dashboard = () => {
+const Leaderboard = () => {
   return (
-    <div className={design.Dashboard_wrapper}>
-      <Sidebar />
+    <div className={design.Leaderboard_wrapper}>
+    <Sidebar />
       <div className={design.outlet}>
         <Outlet/> 
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Leaderboard
