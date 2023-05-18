@@ -1,5 +1,8 @@
 import Button from "../../../Settings/SettingsComponents/Button/Button"
+import PropTypes from 'prop-types'
 import styles from './balancePill.module.css'
+
+
 function BalancePill({img, currency, customStyle }) {
   return (
     <div className={styles.pill} style={customStyle}>
@@ -19,7 +22,13 @@ function BalancePill({img, currency, customStyle }) {
         <Button text='Withdraw'/>
       </section>
     </div>
-  )
-}
+  );
+};
+
+BalancePill.propTypes = {
+  img: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  customStyle: PropTypes.object.isRequired
+};
 
 export default BalancePill

@@ -2,8 +2,6 @@ import styles from './walletMain.module.css'
 import ButtonPill from '../ButtonPill/ButtonPill'
 import BalancePill from '../BalancePill/BalancePill'
 import WatchListCard from '../WatchListCard/WatchListCard'
-import AvailableStations from '../../../../Components/AvailableStations/AvailableStations'
-import RecycleHistory from '../../../../Components/RecycleHistory/RecycleHistory'
 import TransactionHistory from '../../../../Components/TransactionHistory/TransactionHistory'
 
 
@@ -39,7 +37,7 @@ function WalletMain() {
           </section>
 
           <section className={styles['balance-pill-container']}>
-            <WatchListCard/>
+            <TransactionHistory/>
             <WatchListCard/>
           </section>
         </div>

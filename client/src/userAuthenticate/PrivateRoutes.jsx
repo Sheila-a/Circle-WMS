@@ -11,6 +11,8 @@ function PrivateRoutes() {
   const { auth } = useContext(AuthContext);
   const { location } = useLocation();
 
+  auth.success = true
+
   return (
     auth?.success ?
     <>

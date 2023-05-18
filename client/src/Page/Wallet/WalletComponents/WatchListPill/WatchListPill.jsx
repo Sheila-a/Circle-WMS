@@ -1,10 +1,11 @@
 import styles from './watchlistPill.module.css'
+import PropTypes from 'prop-types'
 
-function WatchListPill({figColor, img, coinABV, transact, value, percentChange }) {
+function WatchListPill({customStyle, img, coinABV, transact, value, percentChange }) {
   return (
     <div className={styles.pill}>
       <div className={styles['section-1']}>
-        <figure>
+        <figure style={customStyle}>
           <img src={img} />
         </figure>
 
@@ -20,7 +21,16 @@ function WatchListPill({figColor, img, coinABV, transact, value, percentChange }
       </section>
       
     </div>
-  )
-}
+  );
+};
+
+WatchListPill.propTypes = {
+  customStyle: PropTypes.object.isRequired,
+  img: PropTypes.string.isRequired,
+  coinABV: PropTypes.string.isRequired,
+  transact: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  percentChange: PropTypes.string.isRequired,
+};
 
 export default WatchListPill

@@ -1,3 +1,4 @@
+import AvailableStations from "../../../Components/AvailableStations/AvailableStations"
 import DashNavbar from "../../../Components/DashNavbar/DashNavbar"
 import DidYouKnow from "../../../Components/DidYouKnow/DidYouKnow"
 import Sheader from "../../Settings/SettingsComponents/Header/Sheader"
@@ -17,7 +18,7 @@ function Wallet() {
 
         <div className={styles['layout-2']}>
           <DidYouKnow/>
-          <DidYouKnow/>
+          <AvailableStations/>
         </div>
         
       </main>
