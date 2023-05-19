@@ -55,8 +55,8 @@ const LeaderMain = () => {
   return (
     <div
       className={design.LeaderMain_wrapper}
-      // data-aos="zoom-in"
-      // data-aos-duration="1000"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
     >
       <DashNavbar title="Leaderboard" />
       <div className={design.LeaderMain_hero}>
