@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import design from "./style.module.css";
 const Footer = () => {
   return (
-    <div className={design.Footer_wrapper}>
+    <div className={design.Footer_wrapper} id="contact-us">
       <div className={design.Footer_container}>
         <div className={design.Footer_col}>
           <img src={FLOGO} alt="" className={design.Footer_logo} />

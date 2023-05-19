@@ -3,7 +3,7 @@ import { useContext } from "react";
 import IC2 from "../../assets/Nig.png";
 import design from "./style.module.css";
 import IC1 from "../../assets/Usdc.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IC3 from "../../assets/Bottle.png";
 import Hero from "../../assets/dash_hero.png";
 import Button from "../../Components/Button/Button";
@@ -17,6 +17,11 @@ import AvailableStations from "../../Components/AvailableStations/AvailableStati
 
 const DashMain = () => {
   const { auth } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  function handleRecycle() {
+    navigate("/dashboard/start-recycling");
+  }
 
   function ColorfulPTag({ content }) {
     const isPositive = content.startsWith("+");
@@ -42,16 +47,17 @@ const DashMain = () => {
             We are on a mission to make the world cleaner through recycling and
             blockchain technology
           </p>
-          <Link to="start-recycling">
-            <Button
-              content="Start recycling"
-              style={{
-                backgroundColor: "#8BC34A",
-                border: "none",
-                marginLeft: "0",
-              }}
-            />
-          </Link>
+          {/* <Link to="/start-recycling"> */}
+          <Button
+            onClick={handleRecycle}
+            content="Start recycling"
+            style={{
+              backgroundColor: "#8BC34A",
+              border: "none",
+              marginLeft: "0",
+            }}
+          />
+          {/* </Link> */}
         </div>
         <img src={Hero} />
       </div>
