@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
+import cloudinary from "../configs/cloudinary.config";
 import { MAXAGE, MESSAGES } from "../configs/constants.config";
 import UserService from "../services/user.service";
 import { generateAuthToken } from "../utils/authToken.util";
@@ -123,7 +124,16 @@ export default class UserController {
                 }
             }
         }
-        const updatedUser = await editById(id, data);
+        let imageUrl;
+        if (req.file) {
+            // Upload file to Cloudinary
+            const result = await cloudinary.uploader.upload(req.file.path);
+            imageUrl = result.secure_url;
+        }
+        const updatedUser = await editById(id, {
+            ...data,
+            imageUrl
+        });
         //regenerating token cuz user details was changed
         const token = generateAuthToken(updatedUser as any);
         res.cookie("token", token, {
