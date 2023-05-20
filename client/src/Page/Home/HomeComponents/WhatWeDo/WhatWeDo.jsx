@@ -69,6 +69,7 @@ const WhatWeDo = () => {
           </p>
         </div>
       </div>
+      <div id="how-it-works"></div>
     </div>
   );
 };

@@ -13,29 +13,25 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("");
   const location = useLocation();
 
-
-
   //Logout Functionality
   const navigate = useNavigate();
   const handleLogout = () => {
-    
-    navigate('/login')
-  }
-
+    navigate("/login");
+  };
 
   // update activeItem based on current location
   useEffect(() => {
     if (location.pathname === "/dashboard") {
       setActiveItem("dashboard");
-    } else if (location.pathname === "/wallet") {
+    } else if (location.pathname === "/dashboard/wallet") {
       setActiveItem("wallet");
-    } else if (location.pathname === "/leaderboard") {
+    } else if (location.pathname === "/dashboard/leaderboard") {
       setActiveItem("leaderboard");
     } else if (location.pathname === "/dashboard/settings") {
       setActiveItem("settings");
     }
   }, [location]);
-  
+
   // define active and inactive colors
   const activeBackgroundColor = "#8bc34a";
 
@@ -44,6 +40,7 @@ const Sidebar = () => {
     backgroundColor: activeBackgroundColor,
     textDecoration: "none",
     color: "#fff",
+    transition: ".5s ease",
   };
 
   return (
@@ -70,7 +67,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="/wallet"
+            to="wallet"
             style={activeItem === "wallet" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
@@ -83,7 +80,7 @@ const Sidebar = () => {
         <div>
           <Link
             className={design.Sidebar_tabs}
-            to="/leaderboard"
+            to="leaderboard"
             style={activeItem === "leaderboard" ? activeLinkStyle : {}}
           >
             <div className={design.Sidebar_tabs_inner}>
@@ -108,7 +105,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className={design.Sidebar_logout} onClick={handleLogout}>
-      <ArrowBackIosNewRoundedIcon />  Log out 
+        <ArrowBackIosNewRoundedIcon /> Log out
       </div>
     </div>
   );

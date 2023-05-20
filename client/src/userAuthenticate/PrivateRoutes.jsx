@@ -1,19 +1,26 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+
+import {useLocation, Navigate } from 'react-router-dom';
+
 import Dashboard from '../Page/Dashboard/Dashboard';
+import AuthContext from '../context/AuthProvider';
+import { useContext } from 'react';
+
 
 function PrivateRoutes() {
-  let auth = {'token': true}
+
+  const { auth } = useContext(AuthContext);
+  const { location } = useLocation();
+
+
   return (
-    auth.token ?
+    auth?.success ?
     <>
     <Dashboard/>
-    
     </> 
      : 
     
     
-    <Navigate to='/' />
+    <Navigate to='/login' state={{ from : location}} replace/>
 
   )
 }

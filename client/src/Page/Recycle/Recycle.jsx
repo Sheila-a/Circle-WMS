@@ -1,14 +1,19 @@
-import RecycleMain from "../../Layout/RecycleMain/RecycleMain";
+// import RecycleMain from "../../Layout/RecycleMain/RecycleMain";
 import Sidebar from "../../Layout/Sidebar/Sidebar";
 import design from "./style.module.css";
+import { Outlet } from "react-router-dom";
 
 const Recycle = () => {
   return (
     <div className={design.Recycle_wrapper}>
       <Sidebar />
-      <RecycleMain/>
-    </div>
-  )
-}
+      <div className={design.outlet}>
+        <Outlet />
 
-export default Recycle
+        {/* <RecycleMain /> */}
+      </div>
+    </div>
+  );
+};
+
+export default Recycle;

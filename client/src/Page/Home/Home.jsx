@@ -3,9 +3,10 @@ import Hero from "./HomeComponents/Hero/Hero";
 import HowItWorks from "./HomeComponents/HowItWorks/HowItWorks";
 import TrackBIRC from "./HomeComponents/TrackBIRC/TrackBIRC";
 import WhatWeDo from "./HomeComponents/WhatWeDo/WhatWeDo";
-import Footer from "../../Components/Footer/Footer";
 
-const Home = () => {
+
+const Home = () => {  
+  
   return (
     <div>
       <Hero />
@@ -13,7 +14,7 @@ const Home = () => {
       <WhatWeDo />
       <HowItWorks />
       <TrackBIRC />
-      <Footer/>
+      
     </div>
   );
 };

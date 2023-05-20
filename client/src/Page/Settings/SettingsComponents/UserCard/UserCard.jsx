@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './userCard.module.css';
 import img from '../../../../assets/Ellipse 7.png';
-import camera from '../../../../assets/icon.png';
+import PropTypes from "prop-types";
+import camera from '../../../../assets/Icon.png';
 
 
 
@@ -13,7 +14,7 @@ function UserCard({name, email}) {
 
   //Update activeItem based on currentlocation
   useEffect(() => {
-    if(location.pathname === '/dashboard/settings/personal'){
+    if(location.pathname === '/dashboard/settings'){
       setActiveItem('profile');
     }else if(location.pathname === '/dashboard/settings/password'){
       setActiveItem('password');
@@ -51,7 +52,7 @@ function UserCard({name, email}) {
       <section className={styles['section-2']}>
         <Link
             className={styles['link_style']}
-            to='personal'
+            to=''
             style={activeItem === "profile" ? activeLinkStyle : {}}
         >
           Profile
@@ -70,5 +71,10 @@ function UserCard({name, email}) {
     </div>
   )
 }
+
+UserCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+};
 
 export default UserCard

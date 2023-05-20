@@ -3,7 +3,7 @@ import AboutImg from "../../../../assets/About.png";
 
 const About = () => {
   return (
-    <div className={design.about_container}>
+    <div className={design.about_container} id="about">
       <div
         className={design.about_left}
         data-aos-duration="1000"

@@ -119,6 +119,10 @@ ul.menuItems li a.active:after {
   transition: all 0.3s ease;
 }
 
+.right_hide {
+  display: none;
+}
+
 @media (max-width: 1003px) {
   .btnN {
     display: none;
@@ -126,6 +130,10 @@ ul.menuItems li a.active:after {
 
   .right_content {
     display: none;
+  }
+
+  .right_hide {
+    display: block;
   }
 }
 
@@ -189,7 +197,7 @@ ul.menuItems li a.active:after {
     left: 15%;
     /* padding-top: 50px; */
     background-color: #ffffff;
-    height: 40vh;
+    height: 50vh;
     margin-top: 54px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -215,8 +223,9 @@ ul.menuItems li a.active:after {
     background-color: #fff;
   }
 
-  .menuItems li a {
-    color: var(--primary-color);
+  .menuItems li a:hover {
+    color: #8bc34a;
+    cursor: pointer;
   }
 
   .navbar .menuItems li {
