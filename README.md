@@ -45,15 +45,15 @@ yarn dev
 ### Home
 
 - This shows the users dashboard on the Home Page
-  ![image1](./Images-README/home01.png)
+  ![home](https://res.cloudinary.com/dmvq671my/image/upload/v1684608287/home01_vcpnyd.png)
 
-  ![image1](./Images-README/home02.png)
+  ![home](https://res.cloudinary.com/dmvq671my/image/upload/v1684608399/home02_bdt9wb.png)
 
 ### Wallet
 
 - This shows the users dashboard on the wallet Page
 
-![image1](./Images-README/wallet01.png)
+![wallet](https://res.cloudinary.com/dmvq671my/image/upload/v1684608399/wallet01_rpzlur.png)
 
 ![wallet](https://res.cloudinary.com/dmvq671my/image/upload/v1684608399/wallet02_grg6py.png)
 
