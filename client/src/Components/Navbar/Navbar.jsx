@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../../assets/logo.png";
 import styles from "./style.module.css";
-// import logo from "../../assets/images/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./Button";
 const Navbar = () => {
@@ -30,6 +29,11 @@ const Navbar = () => {
     marginBottom: "-2px",
   };
 
+  const scrollToSection = (sectionId, itemName) => {
+    const sectionToScroll = document.getElementById(sectionId);
+    sectionToScroll.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveItem(itemName);
+  };
   return (
     <header>
       <nav className={styles.navbar}>
@@ -47,7 +51,8 @@ const Navbar = () => {
           <ul className={styles.menuItems}>
             <li>
               <Link
-                to="/about"
+                to="#about"
+                onClick={() => scrollToSection("about", "about")}
                 style={activeItem === "about" ? activeLinkStyle : {}}
               >
                 About
@@ -55,7 +60,8 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/how-it-works"
+                to="#how-it-works"
+                onClick={() => scrollToSection("how-it-works", "how-it-works")}
                 style={activeItem === "how-it-works" ? activeLinkStyle : {}}
               >
                 How it works
@@ -63,10 +69,24 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/contact-us"
+                to="#contact-us"
+                onClick={() => scrollToSection("contact-us", "contact-us")}
                 style={activeItem === "contact-us" ? activeLinkStyle : {}}
               >
                 Contact us
+              </Link>
+            </li>
+
+            <li className={styles.right_hide}>
+              <Link to="signup"> Register</Link>
+            </li>
+            <li className={styles.right_hide}>
+              <Link
+                to="/login"
+                style={{ textDecoration: "none" }}
+                onMouseOver="this.style.color='blue'"
+              >
+                Login
               </Link>
             </li>
           </ul>

@@ -13,7 +13,6 @@
 
 .Sidebar_img {
   padding-bottom: 5px;
-  
 }
 
 .Sidebar_tabs {
@@ -35,6 +34,11 @@
 .Sidebar_tabs_inner {
   display: flex;
   align-items: center;
+}
+
+.Sidebar_tabs:hover {
+  color: #5c5e61;
+  transition: 0.4s ease;
 }
 
 .chev {

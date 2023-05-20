@@ -3,17 +3,17 @@ import Sidebar from "../../Layout/Sidebar/Sidebar";
 import design from "./style.module.css";
 import { Outlet } from "react-router-dom";
 
-
 const Recycle = () => {
   return (
     <div className={design.Recycle_wrapper}>
       <Sidebar />
       <div className={design.outlet}>
-        <Outlet/> 
-      </div>
-      {/* <RecycleMain/> */}
-    </div>
-  )
-}
+        <Outlet />
 
-export default Recycle
+        {/* <RecycleMain /> */}
+      </div>
+    </div>
+  );
+};
+
+export default Recycle;

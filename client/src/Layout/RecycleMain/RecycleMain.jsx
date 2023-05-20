@@ -23,7 +23,7 @@ const RecycleMain = () => {
 
   return (
     <div className={design.RecycleMain_container}>
-      <DashNavbar title="Home / Recycle" />
+      <DashNavbar title="Recycle" />
       <div className={design.RecycleMain_hero}>
         <div>
           <h2>{auth?.user?.fullName}</h2>

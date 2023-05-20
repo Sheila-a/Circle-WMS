@@ -1,5 +1,6 @@
 .layout-1 {
   padding: 4px;
+  width: 65%;
 }
 
 .balance-pill-container,
@@ -12,17 +13,13 @@
   margin-top: 20px;
 }
 
-
-
 .balance-pill-container {
   width: 100%;
 }
 
 @media screen and (max-width: 1008px) {
-
-  .balance-pill-container{
+  .balance-pill-container {
     flex-direction: column;
     justify-content: space-evenly;
   }
-  
 }

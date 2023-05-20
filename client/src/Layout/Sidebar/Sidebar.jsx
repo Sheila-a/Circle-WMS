@@ -13,8 +13,6 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("");
   const location = useLocation();
 
-
-
   //Logout Functionality
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -35,7 +33,7 @@ const Sidebar = () => {
       setActiveItem("settings");
     }
   }, [location]);
-  
+
   // define active and inactive colors
   const activeBackgroundColor = "#8bc34a";
 
@@ -44,6 +42,7 @@ const Sidebar = () => {
     backgroundColor: activeBackgroundColor,
     textDecoration: "none",
     color: "#fff",
+    transition: ".5s ease",
   };
 
   return (
@@ -108,7 +107,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className={design.Sidebar_logout} onClick={handleLogout}>
-      <ArrowBackIosNewRoundedIcon />  Log out 
+        <ArrowBackIosNewRoundedIcon /> Log out
       </div>
     </div>
   );

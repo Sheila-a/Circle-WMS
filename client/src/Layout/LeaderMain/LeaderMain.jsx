@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import DashNavbar from "../../Components/DashNavbar/DashNavbar";
 import design from "./style.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import Hero from "../../assets/dash_hero.png";
 import { useContext } from "react";
@@ -52,11 +52,16 @@ const LeaderMain = () => {
     </div>
   );
 
+  const navigate = useNavigate();
+  function handleRecycle() {
+    navigate("/dashboard/start-recycling");
+  }
+
   return (
     <div
       className={design.LeaderMain_wrapper}
-      // data-aos="zoom-in"
-      // data-aos-duration="1000"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
     >
       <DashNavbar title="Leaderboard" />
       <div className={design.LeaderMain_hero}>
@@ -65,16 +70,17 @@ const LeaderMain = () => {
           <p>
             Check out the leaderboard to see where you rank among other users.
           </p>
-          <Link to="start-recycling">
-            <Button
-              content="Start recycling"
-              style={{
-                backgroundColor: "#8BC34A",
-                border: "none",
-                marginLeft: "0",
-              }}
-            />
-          </Link>
+          {/* <Link to="start-recycling"> */}
+          <Button
+            onClick={handleRecycle}
+            content="Start recycling"
+            style={{
+              backgroundColor: "#8BC34A",
+              border: "none",
+              marginLeft: "0",
+            }}
+          />
+          {/* </Link> */}
         </div>
         <img src={Hero} />
       </div>

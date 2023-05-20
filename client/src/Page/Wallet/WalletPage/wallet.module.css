@@ -1,4 +1,4 @@
-.wallet-home{
+.wallet-home {
   padding: 10px 3vw;
   display: flex;
   justify-content: space-between;
@@ -6,11 +6,11 @@
   flex-direction: row;
 }
 
-.wallet-home .layout-1{
+.wallet-home .layout-1 {
   padding: 10px;
 }
 
-.wallet-home .layout-2{
+.wallet-home .layout-2 {
   width: 313px;
   display: flex;
   flex-direction: column;
@@ -21,9 +21,8 @@
   height: 615px;
 }
 
-
 .balance-pill-container,
-.btn-container{
+.btn-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,13 +31,12 @@
   margin-top: 20px;
 }
 
-
-.balance-pill-container{
- width: 100%; 
+.balance-pill-container {
+  width: 100%;
 }
 
-@media screen and (max-width: 1008px){
-  .wallet-home{
+@media screen and (max-width: 1008px) {
+  .wallet-home {
     flex-direction: column;
     padding-bottom: 100px;
   }

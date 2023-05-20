@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 import {SALTROUNDS, DATABASES} from "../configs/constants.config";
 import bcrypt from "bcrypt";
+import { generateRandomAvatar } from "../utils/randomAvatarURL.util";
 
 const userSchema = new Schema({
     fullName: {
@@ -10,14 +11,6 @@ const userSchema = new Schema({
         maxlength: 100, 
         trim: true
     },
-    // userName: {
-    //     type: String, 
-    //     required: true, 
-    //     minlength: 8, 
-    //     maxlength: 25,
-    //     unique: true,
-    //     trim: true
-    // },
     email: {
         type: String,
         required: true,
@@ -31,50 +24,36 @@ const userSchema = new Schema({
         minlength: 6,
         maxlength: 50
     },
-    // imageTag: {
-    //     type: String
-    // },
-    // dateOfBirth: {
-    //     type: Date,
-    //     required: true,
-    //     set: (value: string) => {
-    //       //Convert the string value to a date object before saving
-    //       return new Date(value);
-    //     },
-    //     get: (value: Date) => {
-    //       // Convert the date object to a string value in the format "YYYY-MM-DD" when returned
-    //       return value.toISOString().substring(0, 10);
-    //     }
-    // },
-    // bio: {
-    //     type: String, 
-    //     required: false,
-    //     trim: true,
-    //     default: null
-    // },
-    // gender: {
-    //     type: String, 
-    //     required: true,
-    //     enum: [ENUM.MALE, ENUM.FEMALE], 
-    //     trim: true
-    // },
-    // location: {
-    //     type: String, 
-    //     required: false, 
-    //     trim: true
-    // },
-    // isDeleted: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // role: {
-    //     type: String,
-    //     enum: [ENUM.REGISTEREDUSER, ENUM.ADMIN],
-    //     required: false,
-    //     lowercase: true,
-    //     trim: true,
-    //     default: ENUM.REGISTEREDUSER
-    // }
+    country: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true
+    },
+    city: {
+        type: String,
+        trim: true,
+        lowercase: true
+    },
+    phoneNumber: {
+        type: String,
+        trim: true,
+        lowercase: true
+    },
+    imageUrl: {
+        type: String
+    },
+    balance: {
+        type: String
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    walletId: {
+        type: String,
+        required: true,
+    }
 }, { 
     timestamps: true
 });
@@ -84,6 +63,8 @@ userSchema.pre("save", async function (next) {
         const salt = await bcrypt.genSalt(SALTROUNDS);
         this.password = await bcrypt.hash(this.password, salt);
     }
+    const _avatarURL = await generateRandomAvatar(this.email);
+    this.imageUrl = _avatarURL;
     next();
 });
 
