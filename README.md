@@ -55,7 +55,7 @@ yarn dev
 
 ![image1](./Images-README/wallet01.png)
 
-![image1](./Images-README/wallet02.png)
+![wallet](https://res.cloudinary.com/dmvq671my/image/upload/v1684608399/wallet02_grg6py.png)
 
 ## Further Improvement
 
