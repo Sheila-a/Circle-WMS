@@ -31,50 +31,25 @@ const userSchema = new Schema({
         minlength: 6,
         maxlength: 50
     },
-    // imageTag: {
-    //     type: String
-    // },
-    // dateOfBirth: {
-    //     type: Date,
-    //     required: true,
-    //     set: (value: string) => {
-    //       //Convert the string value to a date object before saving
-    //       return new Date(value);
-    //     },
-    //     get: (value: Date) => {
-    //       // Convert the date object to a string value in the format "YYYY-MM-DD" when returned
-    //       return value.toISOString().substring(0, 10);
-    //     }
-    // },
-    // bio: {
-    //     type: String, 
-    //     required: false,
-    //     trim: true,
-    //     default: null
-    // },
-    // gender: {
-    //     type: String, 
-    //     required: true,
-    //     enum: [ENUM.MALE, ENUM.FEMALE], 
-    //     trim: true
-    // },
-    // location: {
-    //     type: String, 
-    //     required: false, 
-    //     trim: true
-    // },
-    // isDeleted: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // role: {
-    //     type: String,
-    //     enum: [ENUM.REGISTEREDUSER, ENUM.ADMIN],
-    //     required: false,
-    //     lowercase: true,
-    //     trim: true,
-    //     default: ENUM.REGISTEREDUSER
-    // }
+    country: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true
+    },
+    city: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true
+    },
+    phoneNumber: {
+        type: String,
+        required: false,
+        trim: true,
+        lowercase: true
+    },
+    
 }, { 
     timestamps: true
 });
