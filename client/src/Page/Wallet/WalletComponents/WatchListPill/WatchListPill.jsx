@@ -25,7 +25,7 @@ function WatchListPill({customStyle, img, coinABV, transact, value, percentChang
 };
 
 WatchListPill.propTypes = {
-  customStyle: PropTypes.object.isRequired,
+  customStyle: PropTypes.object,
   img: PropTypes.string.isRequired,
   coinABV: PropTypes.string.isRequired,
   transact: PropTypes.string.isRequired,
