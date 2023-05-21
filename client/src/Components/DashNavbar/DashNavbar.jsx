@@ -45,7 +45,7 @@ const DashNavbar = (props) => {
     <div className={design.DashNavbar_container}>
       <h3>{props.title} </h3>
       <div className={design.DashNavbar_user}>
-        <img src="" alt="logo"/> 
+        <img src={auth?.user?.imageUrl} alt="logo"/> 
         <div className={design.DashNavbar_user_title}>
             <h4>{auth?.user?.fullName}</h4>
             <p>{auth?.user?.email}</p>
