@@ -1,16 +1,20 @@
 import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './userCard.module.css';
-import img from '../../../../assets/Ellipse 7.png';
 import PropTypes from "prop-types";
 import camera from '../../../../assets/Icon.png';
+
+
+
+import { useContext } from "react";
+import AuthContext from '../../../../context/AuthProvider';
 
 
 
 function UserCard({name, email}) {
   const [activeItem, setActiveItem] = useState('dashboard/settings');
   const location = useLocation();
-
+  const { auth } = useContext(AuthContext);
 
   //Update activeItem based on currentlocation
   useEffect(() => {
@@ -36,7 +40,7 @@ function UserCard({name, email}) {
       <section className={styles['section-1']} >
         <div> 
             <figure>
-              <img src={img} alt="" />
+              <img src={auth?.user?.imageUrl} alt="" />
             </figure>
             <button type='file' className={styles['icon-container']}> <img src={camera} alt="" /></button>            
         </div>
