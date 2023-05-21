@@ -4,9 +4,6 @@ const createSchema = Joi.object({
     fullName: Joi.string().required().min(3).max(100).trim(),
     email: Joi.string().email().required().lowercase().trim(),
     password: Joi.string().required().min(6).max(50),
-    walletId: Joi.string().required(),
-    address: Joi.string().required(),
-    balance: Joi.string().required(),
 });
 
 const editSchema = Joi.object({
