@@ -6,6 +6,12 @@ Our waste management system utilizes Circle API to reward users with incentives 
 By encouraging recycling, we aim to promote a cleaner environment and reduce waste in landfills. Our system provides a simple and efficient way for users to participate in sustainable practices and receive tangible benefits for their efforts.
 These incentives can then be used in our marketplace to purchase items as the user may wish.
 
+## Testing the BIRC 
+
+
+To test the recycle, the user should generate a random QR code and input a certain number and then scan it in our app. 
+
+
 ## Live Demo
 
 https://birc.netlify.app/
