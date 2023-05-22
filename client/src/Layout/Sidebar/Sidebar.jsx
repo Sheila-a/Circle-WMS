@@ -16,8 +16,10 @@ const Sidebar = () => {
   //Logout Functionality
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate("/login");
-  };
+    sessionStorage.clear()
+    navigate('/login')
+  }
+
 
   // update activeItem based on current location
   useEffect(() => {
