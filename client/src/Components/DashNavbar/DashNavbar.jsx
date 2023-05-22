@@ -8,6 +8,8 @@ import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded
 import LeaderboardRoundedIcon from "@mui/icons-material/LeaderboardRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import AuthContext from "../../context/AuthProvider";
 import { useContext } from "react";
@@ -17,6 +19,7 @@ import { v4 as uuidv4 } from "uuid";
 const DashNavbar = (props) => {
   const { auth } = useContext(AuthContext);
   const [walletData, setWalletData] = useState(null);
+  const [walletCreated, setWalletCreated] = useState(false);
 
   const [activeItem, setActiveItem] = useState("dashboard");
   const location = useLocation();
@@ -43,7 +46,7 @@ const DashNavbar = (props) => {
     color: "#fff",
   };
 
-  // Create allet and address
+  // Create wallet and address
 
   const createCircleWallet = async () => {
     const idempotencyKey = uuidv4();
@@ -98,36 +101,59 @@ const DashNavbar = (props) => {
         balance: walletData.data.balance,
         address: addressData.data.address,
       });
+
+      // Set the wallet and address data to the user's email in the database
+      const updateUserOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          walletId: walletData.walletId,
+          address: walletData.address,
+        }),
+      };
+
+      const updateUserResponse = await fetch(
+        `https://circle-wms.onrender.com/api/v1/users/${auth?.user?.email}`, // Replace with your API endpoint for updating user data
+        updateUserOptions
+      );
+
+      if (updateUserResponse.ok) {
+        setWalletCreated(true);
+        toast.success("Wallet successfully created");
+      }
     } catch (error) {
       console.error(error);
     }
   };
   return (
     <div className={design.DashNavbar_container}>
+      {/* <ToastContainer /> */}
       <h3>{props.title} </h3>
       <div className={design.DashNavbar_user}>
-        <img src={auth?.user?.imageUrl} alt="logo" />
-        <Button
-          onClick={createCircleWallet}
-          content="Create Wallet"
-          style={{
-            backgroundColor: "#8BC34A",
-            border: "1px solid #8BC34A",
-            marginLeft: "0",
-          }}
-        />
-        {walletData && (
-          <div>
-            <p>Wallet ID: {walletData.walletId}</p>
-            <p>Address: {walletData.address}</p>
-          </div>
+        {!walletCreated && (
+          <Button
+            onClick={createCircleWallet}
+            content="Create Wallet"
+            style={{
+              backgroundColor: "#8BC34A",
+              border: "1px solid #8BC34A",
+              marginLeft: "0",
+            }}
+          />
         )}
-        <img src={auth?.user?.imageUrl} alt="logo" />
+        <img src={auth?.user?.imageUrl} alt="logo" className={design.userImg} />
         <div className={design.DashNavbar_user_title}>
           <h4>{auth?.user?.fullName}</h4>
           <p>{auth?.user?.email}</p>
-          <p>{auth?.user?.walletId}</p>
-          <p>{auth?.user?.address}</p>
+          {walletData && (
+            <>
+              <p>{auth?.user?.walletId}</p>
+
+              <p> {walletData.address}</p>
+            </>
+          )}
         </div>
         <input type="checkbox" />
         <div className={design.hamburgerLines}>
