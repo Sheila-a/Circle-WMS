@@ -67,7 +67,9 @@ const QRCodeScanner = ({ onRecycledData, onProcessed }) => {
         {result && (
           <Button
             onClick={handleProcessed}
-            content={`You have recycled ` + result + `, click to proceed`}
+            content={
+              `You have recycled ` + result + ` bottles, click to proceed`
+            }
             style={{
               backgroundColor: "#8BC34A",
               border: "1px solid #8BC34A",

@@ -14,6 +14,7 @@ import { useRef, useEffect, useState } from "react";
 import recycleHand from "../../assets/signupImg.png";
 import CircularProgress from "@mui/material/CircularProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { v4 as uuidv4 } from "uuid";
 
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX =
@@ -21,6 +22,7 @@ const EMAIL_REGEX =
 const PASSWORD_REGEX =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "https://circle-wms.onrender.com/api/v1/users";
+const CREATE_WALLET_ACCOUNT = "https://api-sandbox.circle.com/v1/wallets";
 
 function Signup({ Clickhandler }) {
   const userRef = useRef();
@@ -42,6 +44,9 @@ function Signup({ Clickhandler }) {
   const [errMessage, setErrMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [walletData, setWalletData] = useState(null);
+  const [walletId, setWalletId] = useState(null);
 
   useEffect(() => {
     userRef.current.focus();
@@ -65,6 +70,8 @@ function Signup({ Clickhandler }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const idempotencyKey = uuidv4();
+
     // if button enabled with JS hack
     const v1 = USERNAME_REGEX.test(fullName);
     const v2 = PASSWORD_REGEX.test(password);
@@ -75,14 +82,88 @@ function Signup({ Clickhandler }) {
 
     try {
       setLoading(true);
+      // create wallet
+      const createWalletOptions = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          authorization:
+            "Bearer SAND_API_KEY:d4f5a846ab735475be2c55be25cc7953:72903f7cb32e324f5bc3c6fa87fd6869",
+        },
+        body: JSON.stringify({
+          idempotencyKey: idempotencyKey,
+        }),
+      };
 
-      const response = await axios.post(
-        SIGNUP_URL,
-        JSON.stringify({ fullName, email, password }),
-        {
-          headers: { "Content-Type": "application/json" },
-        }
+      const walletResponse = await fetch(
+        CREATE_WALLET_ACCOUNT,
+        createWalletOptions
       );
+      const walletData = await walletResponse.json();
+      console.log("Wallet:", walletData);
+
+      // Create the address
+      const createAddressOptions = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          authorization:
+            "Bearer SAND_API_KEY:d4f5a846ab735475be2c55be25cc7953:72903f7cb32e324f5bc3c6fa87fd6869",
+        },
+        body: JSON.stringify({
+          currency: "USD",
+          chain: "ETH",
+          idempotencyKey: idempotencyKey,
+        }),
+      };
+
+      const addressResponse = await fetch(
+        `https://api-sandbox.circle.com/v1/wallets/${walletData.data.walletId}/addresses`,
+        createAddressOptions
+      );
+      const addressData = await addressResponse.json();
+      console.log("Address:", addressData);
+
+      setWalletData({
+        email: email,
+        walletId: walletData.data.walletId,
+        balance: walletData.data.balance,
+        address: addressData.data.address,
+      });
+      setWalletId(walletData.data.walletId);
+
+      // normal login
+
+      const createUser = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          fullName: fullName,
+        }),
+      };
+
+      const response = await fetch(SIGNUP_URL, createUser);
+      const userData = await response.json();
+      console.log("User:", userData);
+      // const response = await axios.post(
+      //   SIGNUP_URL,
+      //   { fullName, email, password, walletId }, // Pass payload as an object
+      //   {
+      //     headers: { "Content-Type": "application/json" },
+      //   }
+      // );
+
+      // const response = await axios.post(
+      //   SIGNUP_URL,
+      //   JSON.stringify({ fullName, email, password, walletId }),
+      //   {
+      //     headers: { "Content-Type": "application/json" },
+      //   }
+      // );
 
       const apiResponse = response?.data;
       console.log(apiResponse);
@@ -97,7 +178,6 @@ function Signup({ Clickhandler }) {
         setErrMessage("Username or Email Taken");
       } else {
         setErrMessage("Registration Failed");
-        console.log(err);
       }
       errRef.current.focus();
     } finally {
